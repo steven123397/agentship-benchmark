@@ -1,0 +1,13 @@
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local environment and temporary output
+.env
+.env.*
+!.env.example
+*.log
+tmp/
+work/

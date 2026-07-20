@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "pending_review",
+  "candidate": {
+    "agent": "Kimi Code",
+    "model": "kimi-k3-thinking",
+    "branch": "run/kimi-kimi-k3-thinking",
+    "resultCommit": "d14dbba7b2d36f71483853995022b5898f386309"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "coordinatorFrozen": true,
+    "independentlyVerified": false,
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "run/kimi-kimi-k3-thinking",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "decisionharbor",
+        "state": "stopped",
+        "web": "http://127.0.0.1:5173",
+        "api": "http://127.0.0.1:8000",
+        "databaseHostPort": null,
+        "stopCommand": "docker compose -f docker-compose.yml down"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending",
+    "qualityScore": null,
+    "manualDeveloperExperienceAdjustment": -2
+  }
+}

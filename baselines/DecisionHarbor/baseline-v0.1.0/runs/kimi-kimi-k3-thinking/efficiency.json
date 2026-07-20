@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "source": "User-reported Kimi session summary",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": "2026-07-20T16:08:00+08:00",
+    "completedAtReported": "2026-07-20T20:56:00+08:00",
+    "wallClockDurationMinutesApprox": 288,
+    "implementationStartedAtReportedApprox": "2026-07-20T19:20:00+08:00",
+    "frontendDependenciesAndVitestPassedByReported": "2026-07-20T19:36:00+08:00",
+    "stackHealthyByReported": "2026-07-20T20:20:00+08:00",
+    "runtimeFixesReportedWindow": "2026-07-20T20:21:00+08:00 to 2026-07-20T20:25:00+08:00",
+    "testScriptPassedByReported": "2026-07-20T20:52:00+08:00"
+  },
+  "tokenUsage": {
+    "totalTokens": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "finalContextTokens": 143377,
+    "note": "Only final input/context length was available; it is not a cumulative token total."
+  },
+  "environmentAndInterventions": [
+    {
+      "kind": "session_network_congestion",
+      "effect": "one interrupted session was resumed by user instruction",
+      "qualityImpact": "none"
+    },
+    {
+      "kind": "avoidable_image_or_package_pull_wait",
+      "startedAtReportedApprox": "2026-07-20T19:38:00+08:00",
+      "durationMinutesApprox": 38,
+      "observation": "pip throughput was about 15 kB/s; changing mirror source later completed comparable build in about 39 seconds",
+      "manualDeveloperExperienceAdjustment": -1
+    },
+    {
+      "kind": "avoidable_image_or_package_pull_wait",
+      "durationMinutesApprox": 20,
+      "observation": "a later wait with no effective progress was manually interrupted by the user",
+      "manualDeveloperExperienceAdjustment": -1
+    }
+  ],
+  "manualDeveloperExperienceAdjustment": {
+    "points": -2,
+    "application": "Applied after the independently reviewed, capped quality score; does not alter quality sub-scores or score caps."
+  }
+}

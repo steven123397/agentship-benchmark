@@ -2,23 +2,24 @@
 
 ## 适用范围
 
-本文件只适用于 `main` 分支上的 AgentShip 元项目内容。独立 baseline 分支应建立各自的项目规则，不继承本文件中的评测叙事。
+本文件适用于 AgentShip 元仓库。独立的 baseline 产品仓库应建立各自的项目规则，不继承本文件中的评测叙事。
 
-## 分支边界
+## 仓库边界
 
-- `main` 只维护项目介绍、方法、任务、提示词、运行记录和结果展示。
-- baseline 项目使用没有共同祖先的 orphan branch。
-- 不要把 baseline 产品源码、依赖或产品内部文档放入 `main`。
-- 不要把 AgentShip 的评分、比较和实验提示放入 baseline 项目。
-- `main` 和 baseline 分支之间不进行 merge、rebase 或 cherry-pick。
+- 本仓库整体维护项目介绍、需求、数据契约与数据集、开发委托、提示词、运行记录、Agent 自主提问记录和结果展示，以及未来可能建设的评测网站和自动评审工具。
+- 每个 baseline 是拥有独立本地目录和远端的真实产品仓库。
+- 不要把 baseline 产品源码、依赖或产品内部文档放入本仓库。
+- 不要把 AgentShip 的评分、比较和实验提示放入 baseline 产品仓库。
+- AgentShip 与 baseline 产品之间通过远端地址、tag 和 commit SHA 建立引用，不复制或合并产品历史。
+- Windows 与 WSL 使用同一个 AgentShip 远端仓库，通过 Git 交接，不建立两套互相分叉的元仓库。
 
 ## 当前阶段
 
-当前只建设主分支文档和 baseline 基础骨架，不提前实现自动化评测平台、排行榜或批量运行系统。
+当前 Windows 侧只准备项目介绍、仓库方法、首个产品的需求与技术栈、固定数据契约和数据集。WSL 侧拉取这些内容后，再确定开发提示词、协作记录、运行结果、评审方案和 baseline 产品仓库的初始结构。自动化评测平台、排行榜和批量运行系统暂不实施。
 
 ## 文档维护
 
 - 重要设计结论应落入 `docs/`，不要只保留在对话中。
 - 修改仓库模型时同步更新 `README.md` 和 `docs/repository-model.md`。
-- 新增 baseline 方向时在 `docs/baselines/` 中登记，但详细产品文档应写入对应 baseline 分支。
+- 新增 baseline 方向时在 `baselines/<ProductName>/` 中登记准备材料，但详细产品实现文档应写入对应的独立产品仓库。
 - 文档应区分已经实现的事实、已经确定的设计和仍待讨论的计划。

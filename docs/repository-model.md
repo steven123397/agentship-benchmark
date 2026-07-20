@@ -1,38 +1,47 @@
-# 仓库与分支模型
+# 仓库模型
 
 ## 1. 设计目标
 
-AgentShip 需要同时保存评测方法和多个真实项目 baseline，但不能让 baseline 项目携带评测叙事，也不能让不同项目被迫共享历史、依赖和工程结构。
+AgentShip 需要管理评测方法和多个真实项目 baseline，但不能让 baseline 产品携带评测叙事，也不能让不同项目共享历史、依赖和工程结构。
 
-因此，本仓库采用多条无共同祖先的 Git 历史：
-
-- `main` 是 AgentShip 元项目。
-- 每个 baseline 项目是一条独立 orphan branch。
-- 分支之间不合并，也不共享根提交。
-
-## 2. main 分支
-
-`main` 可以保存：
-
-- AgentShip 的公开介绍和方法说明
-- baseline 项目索引
-- 不同阶段的任务和提示词
-- 统一测试与评审规则
-- 运行元数据、结果和比较报告
-- 未来可能建设的辅助脚本与展示工具
-
-`main` 不保存 baseline 项目的产品源码、产品依赖或详细产品内部文档。
-
-## 3. Baseline 项目分支
-
-每个 baseline 分支都是可长期发展的真实软件项目，例如：
+因此采用“一个评测元仓库 + 多个独立产品仓库”的结构：
 
 ```text
-baseline/enterprise-rag
-baseline/facility-operations
+/AgentShip
+  -> steven123397/agentship-benchmark
+
+/<真实产品名>
+  -> steven123397/<真实产品名>
+
+/<未来的另一个产品名>
+  -> steven123397/<未来的另一个产品名>
 ```
 
-它应拥有正常项目所需的：
+## 2. AgentShip 元仓库
+
+`agentship-benchmark` 整体可以保存：
+
+- AgentShip 的公开介绍和方法说明
+- baseline 项目索引、需求和技术栈选型
+- 固定分析数据契约、公开合成数据和生成/校验脚本
+- 不同阶段的开发委托和提示词
+- Agent 自主提问记录、运行元数据、结果和比较报告
+- 未来可能建设的模型比较网站、自动评审系统和实验辅助工具
+
+本仓库不保存 baseline 项目的产品源码、产品依赖、独立产品运行历史或由候选 Agent 自主维护的产品内部文档。
+
+Windows 与 WSL 是同一个远端仓库的两个工作阶段，不是两套内容主来源：
+
+1. Windows 侧准备项目说明、仓库方法、需求、技术栈、数据契约和数据集并提交。
+2. WSL 侧通过 Git 拉取这些准备材料。
+3. WSL 侧继续在 AgentShip 仓库中确定提示词、协作记录、运行结果和评审方案。
+4. WSL 侧另外建立 baseline 产品仓库的初始结构，不把产品源码写回 AgentShip。
+
+## 3. Baseline 产品仓库
+
+每个 baseline 都是可长期发展的独立真实软件项目。仓库使用正常产品名称，不要求在名称中包含 `baseline` 或 `benchmark`。
+
+产品形成实现后应拥有正常项目所需的：
 
 - 产品 README
 - 可行性分析和需求分析
@@ -40,37 +49,59 @@ baseline/facility-operations
 - 源码、依赖、迁移、测试和 CI
 - 项目自身的 Agent 与文档治理规则
 
-baseline 项目中不出现候选模型、横向评测、评分标准、隐藏测试或“所有模型保持同一进度”等表述。
+产品仓库中不出现候选模型、横向评测、评分标准、隐藏测试或“所有模型保持同一进度”等表述。
 
-## 4. 分支与快照
+首个受治理 AI 数据分析项目的需求、技术栈和固定数据集由本仓库确定；产品仓库的初始结构、正常项目文档治理和 baseline 快照在 WSL 工作区落地。候选 Agent 从该固定产品起点负责搭建源码、依赖、迁移、容器、测试和可运行基座。
 
-baseline 分支可以继续开发，因此分支名称不能独立标识一次可重复实验。每次任务必须绑定一个固定 commit：
+## 4. 产品演进与 Baseline 快照
+
+产品在自己的 `main` 上正常发展。每次任务必须绑定一个不可变 tag 和精确 commit，而不能直接依赖持续移动的 `main`。首个 tag 可以指向仅有需求与技术选型的文档 commit：
 
 ```text
-baseline/enterprise-rag@<commit-sha>
+main
+  A -> B -> C -> D
+            ^
+            baseline-v0.1.0
 ```
 
-必要时可以使用带项目前缀的版本标签辅助识别，但 commit SHA 始终是最终依据。
+AgentShip 的任务记录保存产品远端地址、baseline tag 和 commit SHA，其中 commit SHA 是最终依据。
 
-## 5. 访问隔离
+## 5. 本地运行结构
 
-Git 分支不是安全边界。直接在中央仓库创建 worktree 时，Agent 仍可能通过 Git 命令读取 `main` 或其他 baseline 的内容。
+产品主工作区负责维护 baseline 文档，`.worktrees/` 只保存在本地并加入产品仓库的 `.gitignore`：
 
-正式评测时应：
+```text
+/<真实产品名>
+  ├── README.md
+  ├── docs/
+  └── .worktrees/
+      ├── codex-run/
+      ├── claude-run/
+      └── kimi-run/
+```
 
-1. 从固定 baseline commit 导出一个干净的独立仓库。
-2. 只保留该项目需要的历史和引用。
-3. 将候选仓库的默认分支正常命名为 `main`。
-4. 在这个隔离仓库中为不同 Agent 创建独立分支或 worktree。
-5. 将评测规则、隐藏测试和其他 Agent 结果保留在候选仓库外部。
+每个运行从同一个固定 tag 或 commit 创建独立结果分支和 worktree。源码、测试、迁移和本地运行环境首先出现在各自的结果分支中。正式测试期间不向共享远端推送其他 Agent 的结果，避免后运行的 Agent 直接取得已有答案。
 
-当前阶段只记录这一原则，不实现自动化导出和运行系统。
+## 6. Worktree 隔离边界
 
-## 6. 禁止的历史操作
+worktree 可以隔离工作目录，但不是严格的信息安全边界。它们共享 Git 元数据，Agent 仍可能查看其他本地分支，也可能在权限允许时读取相邻 worktree。
 
-- 不在 `main` 与 baseline 分支之间 merge。
-- 不在不同 baseline 项目之间 merge。
-- 不通过 rebase 让 baseline 项目继承 `main` 历史。
-- 不直接把某个 Agent 的评测结果合并回 baseline 项目。
+当前实践型评测采用以下约束：
 
-若评测暴露了基础项目缺陷，应由项目维护者在 baseline 分支中独立修复，并以新的 commit 作为未来任务起点。
+1. 提示词明确禁止读取、比较或使用其他 Agent 的分支、提交和 worktree。
+2. 测试开始时所有结果分支都指向同一个 baseline commit。
+3. 测试期间不把其他 Agent 的结果推送到产品远端。
+4. 评测规则、隐藏测试和结果比较只保存在 AgentShip 或外部评测环境中。
+5. 记录该方案依赖 Agent 遵守隔离规则，而不是声称实现了强隔离。
+
+若未来需要严格隔离，应改为每个 Agent 一个独立 clone 或临时私有远端。
+
+## 7. 结果与项目升级
+
+- Agent 的结果分支不直接合并回产品 `main`。
+- 全部运行结束后，结果分支可以统一推送、归档或转换为 patch。
+- AgentShip 保存任务、提示词、Agent 自主提问记录、baseline SHA、结果 SHA、运行资料、评审结果和比较结论。
+- 若评测暴露基础项目缺陷，由项目维护者在产品 `main` 中独立修复。
+- 项目升级后创建新的 baseline tag，历史任务继续绑定旧 commit。
+
+当前阶段先完成 Windows 侧准备材料，再由 WSL 侧承接提示词、协作记录、评审和实际运行，不实现自动化批量运行与结果展示系统。

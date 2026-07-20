@@ -24,46 +24,47 @@ AgentShip 希望回答的问题是：
 
 ## 仓库模型
 
-`main` 只维护 AgentShip 自身的内容，包括项目介绍、评测方法、任务与提示词、运行记录以及结果展示。
+`agentship-benchmark` 只维护 AgentShip 自身的内容，包括项目介绍、评测方法、任务与提示词、运行记录以及结果展示。未来的模型比较结果网站、自动评审系统和实验辅助工具也可以在本仓库中发展。
 
-每个 baseline 项目位于独立的 orphan branch 中，拥有自己的根提交和完整项目历史。baseline 分支被当作真实软件项目维护，不包含模型比较、评分规则或其他评测提示，也不会与 `main` 合并。
+Windows 与 WSL 使用同一个 AgentShip 远端仓库分阶段协作：Windows 侧先准备项目说明、需求、技术栈、数据契约和数据集；WSL 侧拉取后继续确定提示词、协作记录、运行结果、评审方案和 baseline 产品仓库的初始结构。
+
+每个 baseline 都是一个拥有独立本地目录和远端仓库的真实产品项目。它按照正常软件项目维护自己的 `main`、文档、源码、测试、CI 和发布历史，不包含模型比较、评分规则或其他评测提示。
 
 ```text
-main                              AgentShip 项目历史
-  M0 -> M1 -> M2
+/AgentShip
+  -> steven123397/agentship-benchmark
+     项目介绍、任务、提示词、规则、结果和未来评测工具
 
-baseline/enterprise-rag           企业知识库项目历史
-  R0 -> R1 -> R2
-
-baseline/facility-operations      未来可能新增的项目历史
-  F0 -> F1
+/<真实产品名>
+  -> steven123397/<真实产品名>
+     独立的真实产品源码、文档、测试和项目历史
 ```
 
-某次评测使用的是 baseline 分支上的固定 commit，而不是持续移动的分支名称。正式运行时还需要将该 commit 导出为干净的独立 Git 仓库，防止候选 Agent 读取 `main` 上的评测规则或其他结果。
+某次评测使用的是产品仓库 `main` 上的固定 tag 或 commit，而不是持续移动的分支名称。不同 Agent 从同一起点创建本地结果分支和 worktree；正式测试期间不向共享远端推送其他 Agent 的结果，评测规则和隐藏验证也保留在产品仓库之外。
 
-详细约定见 [仓库与分支模型](docs/repository-model.md)。
+详细约定见 [仓库模型](docs/repository-model.md)。
 
 ## 首个 Baseline 方向
 
-首个计划中的项目是一个企业知识治理与可追溯智能问答平台，覆盖文档解析、异步处理、向量检索、RAG 问答、引用溯源、权限隔离、历史反馈和成本观测。
+首个计划中的项目是一个受治理的 AI 数据分析平台。长期方向包含自然语言分析，但首轮只要求用户提交显式 SQL，系统对其进行解析、策略校验和只读执行，并展示结果与审计证据。这样首轮可以观察从空项目搭建跨层基座和安全边界的能力，不把 LLM 接入质量混入基础任务。
 
-它将作为正常产品进行可行性分析、需求分析、架构设计和基础骨架建设，不在项目内部描述自己是评测样例。
+需求、技术栈、数据契约和公开合成数据先在 Windows 侧确定；WSL 侧据此编写首轮开发提示词，并建立独立的真实产品仓库和 baseline 初始结构。候选 Agent 从固定产品起点继续搭建可运行项目和第一条最小纵向业务闭环。
 
-方向说明见 [企业 RAG baseline](docs/baselines/enterprise-rag.md)。
+方向说明见 [DecisionHarbor baseline 准备材料](baselines/DecisionHarbor/governed-ai-data-analytics.md)。
 
 ## 当前阶段
 
 项目目前处于设计和基础建设阶段，近期只关注：
 
-1. 建立 AgentShip 的主分支文档。
-2. 明确仓库、baseline 和快照之间的边界。
-3. 在独立 orphan branch 中建设首个真实项目骨架。
+1. 在 Windows 侧完成项目说明、需求、技术栈、数据契约和公开数据集。
+2. 通过 Git 将准备材料交接给 WSL 侧的同一 AgentShip 仓库。
+3. 在 WSL 侧形成提示词、协作记录、运行结果、独立产品仓库初始结构和最终评审方案。
 
 自动化评测平台、排行榜和批量运行器暂不属于当前阶段。
 
 ## 文档
 
-- [仓库与分支模型](docs/repository-model.md)
+- [仓库模型](docs/repository-model.md)
 - [评测原则](docs/evaluation-principles.md)
-- [企业 RAG baseline](docs/baselines/enterprise-rag.md)
+- [DecisionHarbor baseline 准备材料](baselines/DecisionHarbor/governed-ai-data-analytics.md)
 - [路线图](docs/roadmap.md)

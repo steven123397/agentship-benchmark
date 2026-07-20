@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "pending_review",
+  "candidate": {
+    "agent": "Codex CLI",
+    "model": "gpt-5.6-sol-xhigh",
+    "branch": "run/codex-gpt-5.6-sol-xhigh",
+    "resultCommit": "6e3964f05b72d44a50f7d2a7657304a83cfa11c1"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "coordinatorFrozen": true,
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "run/codex-gpt-5.6-sol-xhigh",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "dhverify",
+        "state": "stopped",
+        "web": "http://127.0.0.1:15173",
+        "api": "http://127.0.0.1:18080"
+      },
+      {
+        "name": "dhverify2",
+        "state": "stopped",
+        "web": "http://127.0.0.1:15174",
+        "api": "http://127.0.0.1:18081"
+      },
+      {
+        "name": "dhcodex2",
+        "state": "stopped"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending",
+    "qualityScore": null
+  }
+}

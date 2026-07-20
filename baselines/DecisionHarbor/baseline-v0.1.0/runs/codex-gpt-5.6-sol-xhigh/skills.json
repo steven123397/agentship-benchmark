@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "source": "User-reported Codex session summary",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "summary": {
+    "distinctSkills": 13,
+    "cumulativeLoads": 20
+  },
+  "usedExternalSkills": [
+    {"name": "using-superpowers", "phase": "governance"},
+    {"name": "bootstrap-project-governance", "phase": "governance"},
+    {"name": "chinese-documentation", "phase": "governance_and_design"},
+    {"name": "verification-before-completion", "phase": "governance_design_and_finalization"},
+    {"name": "brainstorming", "phase": "design"},
+    {"name": "grilling", "phase": "design"},
+    {"name": "domain-modeling", "phase": "design"},
+    {"name": "to-spec", "phase": "design"},
+    {"name": "writing-plans", "phase": "implementation"},
+    {"name": "test-driven-development", "phase": "implementation"},
+    {"name": "systematic-debugging", "phase": "implementation_debugging"},
+    {"name": "requesting-code-review", "phase": "implementation_finalization"}
+  ],
+  "agentBuiltInSkills": {
+    "status": "reported",
+    "used": [
+      {"name": "frontend-design", "phase": "implementation"}
+    ]
+  },
+  "agentReportedReview": {
+    "triggeredBy": "requesting-code-review",
+    "fixedImportantFindings": 4,
+    "independentlyVerified": false
+  },
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

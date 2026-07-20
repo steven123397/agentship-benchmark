@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "source": "User-reported Codex session telemetry",
+  "statisticsCutoff": "The implementation-complete reply; excludes the later statistics exchange.",
+  "qualityScoreIncluded": false,
+  "threePhaseSession": {
+    "startedAt": "2026-07-20T16:14:05+08:00",
+    "endedAt": "2026-07-20T18:57:25+08:00",
+    "wallClockDurationMs": 9799420,
+    "wallClockDurationHuman": "2 hours 43 minutes 19.420 seconds",
+    "inputTokens": 60231203,
+    "cachedInputTokens": 59280896,
+    "nonCachedInputTokens": 950307,
+    "outputTokens": 196615,
+    "reasoningTokens": 68993,
+    "reasoningTokensIncludedInOutput": true,
+    "totalTokens": 60427818
+  },
+  "implementationPhase": {
+    "wallClockDurationMs": 7765058,
+    "wallClockDurationHuman": "2 hours 9 minutes 25.058 seconds",
+    "inputTokens": 55799190,
+    "cachedInputTokens": 55007744,
+    "nonCachedInputTokens": 791446,
+    "outputTokens": 131271,
+    "reasoningTokens": 37820,
+    "reasoningTokensIncludedInOutput": true,
+    "totalTokens": 55930461
+  },
+  "notes": [
+    "Long-thread tool output and repeated context accounting materially increase input tokens.",
+    "Approximately 98 percent of input tokens were reported as cache hits, so total tokens are not a direct non-cached cost estimate.",
+    "No reliable per-skill duration or token split was available because the session did not create an independent goal."
+  ]
+}

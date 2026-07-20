@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "pending_review",
+  "candidate": {
+    "agent": "Grok Build",
+    "model": "grok-4.5-high",
+    "branch": "run/grok-grok-4.5-high",
+    "resultCommit": "8bbe8de2875d32804067d8418fb5bc6fc8cb431c"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "run/grok-grok-4.5-high",
+    "pushed": true
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "coordinatorFrozen": true,
+    "composeStopped": true
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending",
+    "qualityScore": null
+  }
+}

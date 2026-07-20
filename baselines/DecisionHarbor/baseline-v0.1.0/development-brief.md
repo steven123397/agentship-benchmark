@@ -5,7 +5,7 @@
 ## 提示词一：建立治理
 
 ```text
-你负责继续开发 DecisionHarbor。先运行 `git status --short --branch`，再阅读 `AGENTS.md`、`README.md`、全部 `docs/background/` 和 `datasets/sales-analytics-v1/{README.md,contract.json}`。
+你负责继续开发 DecisionHarbor。全程不要查看其他并行工作树。先运行 `git status --short --branch`，再阅读 `AGENTS.md`、`README.md`、全部 `docs/background/` 和 `datasets/sales-analytics-v1/{README.md,contract.json}`。
 
 本阶段使用 Bootstrap Project Governance skill：先阅读 skill 当前说明，再按其流程建立最小、长期可维护的文档治理体系。保留现有根规则、README 和背景资料，优先扩展而非复制。建立清晰的 `docs/index.md`，并区分 `background`、`design`、`plan` 与 `status` 的职责。
 

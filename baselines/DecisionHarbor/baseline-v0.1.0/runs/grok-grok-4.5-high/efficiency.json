@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "source": "User-reported Grok session telemetry",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "sessionWallClockSecondsApprox": 4534,
+    "signalsSessionDurationSeconds": 4482,
+    "taskSpanSecondsApprox": 4350
+  },
+  "phases": [
+    {
+      "name": "governance",
+      "startUtc": "07:14",
+      "endUtc": "07:18",
+      "durationSecondsApprox": 228
+    },
+    {
+      "name": "design",
+      "startUtc": "07:18",
+      "endUtc": "07:24",
+      "durationSecondsApprox": 372
+    },
+    {
+      "name": "implementation_and_verification",
+      "startUtc": "07:24",
+      "endUtc": "08:27",
+      "durationSecondsApprox": 3744
+    }
+  ],
+  "usage": {
+    "models": ["grok-4.5", "grok-4.5-build"],
+    "inputTokens": 4145483,
+    "outputTokens": 53994,
+    "totalTokens": 4199477,
+    "cachedReadTokens": 3970944,
+    "reasoningTokens": 30296,
+    "modelCalls": 45,
+    "apiDurationMs": 1280706,
+    "costUsdTicks": 18643252000,
+    "costUsdApproximate": 18.6,
+    "costNote": "The session did not define a fixed tick-to-USD conversion."
+  },
+  "turnUsage": [
+    {
+      "phase": "governance",
+      "inputTokens": 218932,
+      "outputTokens": 7305,
+      "totalTokens": 226237,
+      "modelCalls": 8,
+      "apiDurationMsApprox": 144000
+    },
+    {
+      "phase": "design",
+      "inputTokens": 280660,
+      "outputTokens": 13109,
+      "totalTokens": 293769,
+      "modelCalls": 6,
+      "apiDurationMsApprox": 288000
+    },
+    {
+      "phase": "implementation",
+      "inputTokens": 3645891,
+      "outputTokens": 33580,
+      "totalTokens": 3679471,
+      "modelCalls": 31,
+      "apiDurationMsApprox": 846000
+    }
+  ],
+  "context": {
+    "currentTokensUsed": 169001,
+    "windowTokens": 500000,
+    "usagePercentApprox": 33,
+    "peakTotalTokensApprox": 188255,
+    "compactions": 0
+  },
+  "tooling": {
+    "toolCallCount": 140,
+    "reportedTools": [
+      "read_file",
+      "run_terminal_command",
+      "list_dir",
+      "todo_write",
+      "write",
+      "search_replace",
+      "get_command_or_subagent_output"
+    ]
+  },
+  "changeStats": {
+    "agentReported": {
+      "insertions": 3407,
+      "deletions": 18,
+      "filesTouched": 58
+    },
+    "frozenGitCommit": {
+      "insertions": 5783,
+      "deletions": 18,
+      "filesChanged": 59
+    }
+  }
+}

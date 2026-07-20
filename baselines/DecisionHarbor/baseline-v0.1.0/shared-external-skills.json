@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "scope": "All candidates receive this shared externally loaded skill baseline.",
+  "sourceDirectory": "/home/liangjiaqi/.agents/skills",
+  "excludes": "Agent built-in or system-provided skills are not included in this manifest.",
+  "hashAlgorithm": "sha256",
+  "skills": [
+    {"name": "bootstrap-project-governance", "skillMdSha256": "362157c0f2756a2f58c2db2bdc98b040f90bfa6ce0da580d408838e31ddfc2b8"},
+    {"name": "brainstorming", "skillMdSha256": "3b495b6a9f4fd17d6e7998976a6611b6438f2920417c63811bdfec82539b9289"},
+    {"name": "chinese-code-review", "skillMdSha256": "cc81a8fa7f29970d184af99341e1ec68bb331bc12919c81e1b2b6f65a0c4d892"},
+    {"name": "chinese-commit-conventions", "skillMdSha256": "ebf883dadbfa4b9d404da2310a2470a5ef1e7cecc3abb584b79238452932cb21"},
+    {"name": "chinese-documentation", "skillMdSha256": "318c87079f63b4abe4b4ad600301abc3c997400601d4c450d3eb9646ad3e6379"},
+    {"name": "chinese-git-workflow", "skillMdSha256": "55a017399d22fcf6cb573d52fb27e4177b0f5d660bdc9675d6532e34298bb232"},
+    {"name": "dispatching-parallel-agents", "skillMdSha256": "738669df4e5fe3c9070bdc9cdc5646f86df3aecd59495ef29cd0c8418a6db7f6"},
+    {"name": "domain-modeling", "skillMdSha256": "2f65292c21ec7a8805147ff777135299a4887c29bab43d44db449f2c0c6fc468"},
+    {"name": "executing-plans", "skillMdSha256": "ccc0178dde0ec3decd1b81b1489df09e8a76134fd5f7ecccfbb83d678ae3adb8"},
+    {"name": "finishing-a-development-branch", "skillMdSha256": "a65266ecb98128ecd1f799b201398df1caceb7f987390e7a38d8f4dcf7309962"},
+    {"name": "grilling", "skillMdSha256": "edacfe22ff26f40c73a2c546bd2998695a17f810302fc042ed4011689c74af42"},
+    {"name": "mcp-builder", "skillMdSha256": "f2c3b0ca3e03749f4c27e3a02465121ac137c20b653520328b718434cf97de58"},
+    {"name": "receiving-code-review", "skillMdSha256": "6be664083cdac9ab91fca7c1c1d08a6c358ef0770f6d8321326575a5e319e0d8"},
+    {"name": "requesting-code-review", "skillMdSha256": "3d5874635a2a287db2bb2b4526f2ba5b947e63c7e6752d0daa5c7784e57f47fd"},
+    {"name": "subagent-driven-development", "skillMdSha256": "ad76b93139fe67a12aa21ad80be53e1990fc042b94d6b59a57e72654fb55339b"},
+    {"name": "systematic-debugging", "skillMdSha256": "f891abd5893557eeab4c174d8b793b3ba43fad110c843b797d3b8255ad66bf6f"},
+    {"name": "test-driven-development", "skillMdSha256": "31d4b500eeb1cc86c58ef418352282d449e2d33979bfcce1289d7a92d00aca29"},
+    {"name": "to-spec", "skillMdSha256": "da6294304ccb292570f9b204dd1207e4dc4d3689f2ce4b48d82155b2fa946fcb"},
+    {"name": "using-git-worktrees", "skillMdSha256": "9724b797108bc8c39ae393d123f7d4f51fffe2fc061229878890acd425a860d4"},
+    {"name": "using-superpowers", "skillMdSha256": "a39c31d1fcf5d54bd877e5a7acffcf12cce34e04e836a42a932cba5cabc04ac5"},
+    {"name": "verification-before-completion", "skillMdSha256": "5d1ece23d270429615baf50acd31fdd6afc175d061e7ac1909a585914a91f147"},
+    {"name": "workflow-runner", "skillMdSha256": "0564d11012b7b012acbe8e0b237152e3d1a46ce546cfaf67948832aa4e326cb2"},
+    {"name": "writing-plans", "skillMdSha256": "74ed4ffcd443c604e9d723217e3b9c957d94c2dbb554867b68673dfdb4c32d30"},
+    {"name": "writing-skills", "skillMdSha256": "b0078a77f61733c3df59245e9cd5cdb043ab93189f78be403d668b6a6c82775b"}
+  ]
+}

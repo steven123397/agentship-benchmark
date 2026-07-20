@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "source": "User-reported Grok session summary",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "usedExternalSkills": [
+    {"name": "using-superpowers", "phase": "all"},
+    {"name": "bootstrap-project-governance", "phase": "governance"},
+    {"name": "chinese-documentation", "phase": "governance_and_design"},
+    {"name": "brainstorming", "phase": "design_entry"},
+    {"name": "to-spec", "phase": "design"},
+    {"name": "writing-plans", "phase": "implementation"},
+    {"name": "test-driven-development", "phase": "implementation"},
+    {"name": "verification-before-completion", "phase": "implementation_finalization"}
+  ],
+  "mentionedButNotFullyRun": [
+    "design",
+    "domain-modeling",
+    "executing-plans",
+    "subagent-driven-development",
+    "check-work",
+    "review"
+  ],
+  "agentBuiltInSkills": {
+    "status": "not_reported",
+    "note": "Do not infer built-in skills from the external skill report."
+  },
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

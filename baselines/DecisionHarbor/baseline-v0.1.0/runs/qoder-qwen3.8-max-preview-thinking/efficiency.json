@@ -1,19 +1,21 @@
 {
   "schemaVersion": 1,
-  "source": "Run scaffold before Qoder execution",
+  "source": "用户提供的 Qoder 完成摘要",
   "qualityScoreIncluded": false,
   "timing": {
     "startedAtReported": null,
     "completedAtReported": null,
-    "wallClockDurationMinutesApprox": null,
-    "wallClockNote": null
+    "wallClockDurationMinutesApprox": 89.35,
+    "wallClockNote": "总墙钟时间为 1 小时 29 分 21 秒；提示词一的治理骨架约 3 分钟，提示词二的架构设计约 5 分钟，其余约 81.35 分钟为实现与完成汇报前的工作。",
+    "promptOneGovernanceMinutesApprox": 3,
+    "promptTwoArchitectureDesignMinutesApprox": 5
   },
   "tokenUsage": {
-    "totalTokens": null,
+    "totalTokens": 180000,
     "inputTokens": null,
     "outputTokens": null,
     "finalContextTokens": null,
-    "note": null
+    "note": "仅提供约 180k 的累计 token 总量；输入、输出、reasoning 与最终上下文长度均未提供。"
   },
   "environmentAndInterventions": [],
   "manualDeveloperExperienceAdjustment": {

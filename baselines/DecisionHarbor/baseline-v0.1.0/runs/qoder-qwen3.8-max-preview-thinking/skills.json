@@ -1,18 +1,20 @@
 {
   "schemaVersion": 1,
-  "source": "Run scaffold before Qoder execution",
+  "source": "用户提供的 Qoder 完成摘要",
   "sharedExternalSkillsManifest": "../../shared-external-skills.json",
   "summary": {
-    "confirmedDistinctExternalSkills": 0,
+    "confirmedDistinctExternalSkills": 1,
     "cumulativeLoads": null
   },
-  "usedExternalSkills": [],
+  "usedExternalSkills": [
+    {"name": "bootstrap-project-governance", "phase": "governance"}
+  ],
   "agentBuiltInSkills": {
     "status": "not_reported",
     "used": []
   },
   "notes": [
-    "Populate only from the agent's reported session evidence after execution; do not infer unreported skill usage."
+    "Only bootstrap-project-governance was confirmed by the supplied completion summary; unreported skill usage and repeated loads are not inferred."
   ],
   "scoringTreatment": "configuration_and_efficiency_metadata_only"
 }

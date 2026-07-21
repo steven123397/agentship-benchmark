@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "status": "in_progress",
+  "status": "frozen_pending_review",
   "candidate": {
     "agent": "Qoder",
     "model": "Qwen3.8-Max-Preview-thinking",
     "branch": "v0.1.0/qoder-qwen3.8-max-preview-thinking",
-    "resultCommit": null
+    "resultCommit": "fffe1f6bbe15872479d3579ea99d57deba7445f3"
   },
   "baseline": {
     "tag": "baseline-v0.1.0",
@@ -13,30 +13,42 @@
   },
   "development": {
     "brief": "../../development-brief.md",
-    "currentStage": "governance_and_design",
-    "promptOne": "pending",
-    "promptTwo": "pending",
-    "promptThree": "not_started",
+    "currentStage": "frozen_pending_review",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed",
     "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
   },
   "completion": {
-    "agentReportedComplete": false,
+    "agentReportedComplete": true,
     "agentReportedFinalValidation": false,
-    "coordinatorFrozen": false,
+    "reportedValidationEvidence": "not_provided",
+    "coordinatorFrozen": true,
     "independentlyVerified": false,
     "runtimeStacksActive": false
   },
   "remote": {
     "repository": "git@github.com:steven123397/decision-harbor.git",
     "branch": "v0.1.0/qoder-qwen3.8-max-preview-thinking",
-    "pushed": false
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "decisionharbor",
+        "state": "stopped",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/qoder-qwen3.8-max-preview-thinking",
+        "stopCommand": "docker compose down --remove-orphans",
+        "stopResult": "在用户明确授权后，由协调方停止并移除 Web、API、DB 容器与默认网络；未删除数据卷。"
+      }
+    ]
   },
   "skillEnvironment": {
     "sharedExternalSkillsManifest": "../../shared-external-skills.json",
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "not_eligible",
+    "status": "pending_first_round",
     "qualityScore": null
   }
 }

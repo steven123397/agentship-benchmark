@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "source": "Run scaffold before Qoder execution",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": null,
+    "completedAtReported": null,
+    "wallClockDurationMinutesApprox": null,
+    "wallClockNote": null
+  },
+  "tokenUsage": {
+    "totalTokens": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "finalContextTokens": null,
+    "note": null
+  },
+  "environmentAndInterventions": [],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "No adjustment has been assigned."
+  }
+}

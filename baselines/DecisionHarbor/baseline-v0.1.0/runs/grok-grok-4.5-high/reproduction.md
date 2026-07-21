@@ -3,7 +3,7 @@
 ## 状态
 
 - 候选结果已冻结为 `8bbe8de2875d32804067d8418fb5bc6fc8cb431c`。
-- 远端结果分支为 `origin/run/grok-grok-4.5-high`。
+- 远端结果分支为 `origin/v0.1.0/grokbuild-grok-4.5-high`。
 - 收尾时已执行 `./scripts/down.sh`，当前 Compose 栈已停止。
 - 独立评审复现尚未开始；本文件不含评分结论。
 
@@ -19,4 +19,4 @@ Agent 报告其在完成前执行过数据集校验、Compose 启动、允许和
 
 ## 待执行的独立复现
 
-在独立 review worktree 中，从冻结 commit 重新执行项目支持的启动、数据集校验、统一测试、健康检查、允许/拒绝 SQL API 和浏览器主链，并保存命令与输出。
+在冻结候选工作树或独立 review worktree 中，从冻结 commit 重新执行项目支持的启动、数据集校验、统一测试、健康检查、允许/拒绝 SQL API 和浏览器主链，并保存命令与输出。直接使用候选工作树时，开始与结束均记录 `HEAD`、`git status --short --branch` 和 `git diff --check`。

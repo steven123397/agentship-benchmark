@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 ZCode 完成摘要与可观测构建、测试日志",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": null,
+    "completedAtReported": null,
+    "wallClockDurationMinutesApprox": null,
+    "wallClockNote": "无会话级起止时间；大部分等待发生在慢网络下的镜像构建轮询，不能据此推导整体墙钟时长。",
+    "apiInitialImageBuild": {
+      "pipInstallObservedElapsedSecondsRange": [1436, 1546],
+      "observation": "#13 的 pip install 在该观察区间仍逐个下载 wheel，曾观测到约 14–17 kB/s；完整步骤耗时不可得。",
+      "foregroundAttemptTimeoutMinutes": 7,
+      "followUp": "前台构建超时后改为后台构建，随后完成。"
+    },
+    "apiSecondImageRebuild": {
+      "pipInstallObservedElapsedSeconds": 461,
+      "observation": "加入 tests 目录后的重建在 #14 461 秒时仍在下载 fastapi；未在观察窗口内完成。"
+    },
+    "databaseHealthySecondsApproxRange": [6, 9],
+    "integrationTest": "14 passed in 0.69s（仅 pytest 运行时间，另有容器启动开销）。",
+    "playwright": "3 passed in 1.2s。",
+    "viteBuild": "779ms。"
+  },
+  "tokenUsage": {
+    "totalTokens": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "finalContextTokens": 79974,
+    "note": "仅提供最终上下文长度，非累计 token 总量；输入与输出 token 均不可精确统计。"
+  },
+  "environmentAndInterventions": [
+    {
+      "kind": "slow_network_dependency_download",
+      "observation": "镜像构建期间 pip 逐个下载 wheel，速度约 14–17 kB/s；多次 30 秒轮询等待可能占任务大半时间。",
+      "qualityImpact": "none"
+    },
+    {
+      "kind": "foreground_build_timeout_then_background_completion",
+      "observation": "首次 API 镜像前台构建在约 7 分钟后超时，后续改为后台构建完成。",
+      "qualityImpact": "none"
+    }
+  ],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "未分配过程调整；慢网络构建等待仅作为可观测运行数据归档，不改变质量分或封顶。"
+  }
+}

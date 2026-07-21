@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "pending_human_scores",
+  "candidate": {
+    "agent": "ZCode",
+    "model": "glm-5.2-high",
+    "branch": "v0.1.0/zcode-glm-5.2-high",
+    "resultCommit": "e3934d3dbaf8ecf384c38d9bb27e84f70a0abcde"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "frozen_pending_review",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed",
+    "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "coordinatorFrozen": true,
+    "independentlyVerified": false,
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/zcode-glm-5.2-high",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "decisionharbor",
+        "state": "stopped",
+        "observedContainer": "decisionharbor-db-1",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/zcode-glm-5.2-high",
+        "stopCommand": "docker compose -f docker-compose.yml down",
+        "stopResult": "在用户明确授权后，由协调方执行 docker compose down；容器与网络均已移除。"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending_human_scores",
+    "qualityScore": null,
+    "codexTechnicalScore": 62,
+    "grokTechnicalScore": 87,
+    "technicalAverage": 74.5,
+    "humanDocumentationScore": null,
+    "humanVisualScore": null,
+    "riskFlags": [
+      {
+        "level": "P0",
+        "confirmed": true,
+        "evidenceReport": "codex-review.md",
+        "summary": "CTE 同名遮蔽使显式系统 schema 引用绕过对象范围检查。"
+      }
+    ]
+  }
+}

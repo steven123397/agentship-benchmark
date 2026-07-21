@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "status": "in_progress",
+  "candidate": {
+    "agent": "Qoder",
+    "model": "Qwen3.8-Max-Preview-thinking",
+    "branch": "v0.1.0/qoder-qwen3.8-max-preview-thinking",
+    "resultCommit": null
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "governance_and_design",
+    "promptOne": "pending",
+    "promptTwo": "pending",
+    "promptThree": "not_started",
+    "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
+  },
+  "completion": {
+    "agentReportedComplete": false,
+    "agentReportedFinalValidation": false,
+    "coordinatorFrozen": false,
+    "independentlyVerified": false,
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/qoder-qwen3.8-max-preview-thinking",
+    "pushed": false
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "not_eligible",
+    "qualityScore": null
+  }
+}

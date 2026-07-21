@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "status": "pending_review",
+  "status": "pending_human_scores",
   "candidate": {
     "agent": "Codex CLI",
     "model": "gpt-5.6-sol-xhigh",
-    "branch": "run/codex-gpt-5.6-sol-xhigh",
+    "branch": "v0.1.0/codex-gpt-5.6-sol-xhigh",
     "resultCommit": "6e3964f05b72d44a50f7d2a7657304a83cfa11c1"
   },
   "baseline": {
@@ -18,7 +18,7 @@
   },
   "remote": {
     "repository": "git@github.com:steven123397/decision-harbor.git",
-    "branch": "run/codex-gpt-5.6-sol-xhigh",
+    "branch": "v0.1.0/codex-gpt-5.6-sol-xhigh",
     "pushed": true
   },
   "runtime": {
@@ -46,7 +46,20 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending",
-    "qualityScore": null
+    "status": "pending_human_scores",
+    "qualityScore": null,
+    "codexTechnicalScore": 81.5,
+    "grokTechnicalScore": 88.5,
+    "technicalAverage": 85,
+    "humanDocumentationScore": null,
+    "humanVisualScore": null,
+    "riskFlags": [
+      {
+        "level": "P0",
+        "confirmed": true,
+        "evidenceReport": "codex-review.md",
+        "summary": "reg* PostgreSQL 对象标识类型转换可绕过对象授权。"
+      }
+    ]
   }
 }

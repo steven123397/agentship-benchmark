@@ -21,6 +21,24 @@
     "coordinatorFrozen": true,
     "composeStopped": true
   },
+  "archive": {
+    "agentShipArchiveCommit": "b508bfd253d37ff10bb4b2b3b15fedf277d9ae31",
+    "remoteBranchRenamedFrom": "run/grok-grok-4.5-high",
+    "localWorktree": {
+      "state": "removed",
+      "formerPath": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/grok-grok-4.5-high",
+      "removedOn": "2026-07-21"
+    },
+    "localBranch": {
+      "state": "removed",
+      "removedOn": "2026-07-21"
+    },
+    "dockerCleanup": {
+      "candidateContainersAndVolumes": "none_present_at_cleanup",
+      "removedImageTagPrefix": "dhgrok",
+      "globalCachesAndGenericImagesRetained": true
+    }
+  },
   "skillEnvironment": {
     "sharedExternalSkillsManifest": "../../shared-external-skills.json",
     "candidateUsageRecord": "skills.json"

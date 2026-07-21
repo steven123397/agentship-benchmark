@@ -43,6 +43,24 @@
       }
     ]
   },
+  "archive": {
+    "agentShipArchiveCommit": "b508bfd253d37ff10bb4b2b3b15fedf277d9ae31",
+    "remoteBranchRenamedFrom": "run/zcode-glm-5.2-high",
+    "localWorktree": {
+      "state": "removed",
+      "formerPath": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/zcode-glm-5.2-high",
+      "removedOn": "2026-07-21"
+    },
+    "localBranch": {
+      "state": "removed",
+      "removedOn": "2026-07-21"
+    },
+    "dockerCleanup": {
+      "candidateContainersAndVolumes": "none_present_at_cleanup",
+      "removedImageTagPrefix": "dhzcode",
+      "globalCachesAndGenericImagesRetained": true
+    }
+  },
   "skillEnvironment": {
     "sharedExternalSkillsManifest": "../../shared-external-skills.json",
     "candidateUsageRecord": "skills.json"

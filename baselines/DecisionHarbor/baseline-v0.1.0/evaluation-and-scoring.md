@@ -13,6 +13,7 @@
 - Kimi Code：`kimi-k3-thinking`
 - ZCode：`glm-5.2-high`
 - Qoder：`Qwen3.8-Max-Preview-thinking`
+- Claude Code：`claude-fable-5`
 
 ## 固定输入与不变量
 

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Claude Code 完成摘要；精确 token 数据未提供",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": null,
+    "completedAtReported": null,
+    "wallClockDurationMinutesApprox": 100,
+    "wallClockNote": "基于 2026-07-26 的文件时间戳、Git 记录和运行日志估算：治理约 8 分钟，设计约 15 分钟，实现约 17 分钟，构建与验证约 55 分钟，提交于约 19:39。阶段之和与总时长均含近似值。"
+  },
+  "tokenUsage": {
+    "totalTokens": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "finalContextTokens": null,
+    "estimatedOutputTokensRange": [80000, 100000],
+    "estimatedInputTokensOrderOfMagnitude": "数百万，主要为多轮上下文与工具输出回读，不能作为精确计费数据。",
+    "toolCallsApprox": "120+",
+    "note": "会话内未取得 /cost 或 /usage 的精确数据。用户估算产出约 8 至 10 万 output token，累计 input token 为数百万量级；所有精确字段保持 null。"
+  },
+  "environmentAndInterventions": [
+    {
+      "kind": "environment",
+      "phase": "build_and_validation",
+      "durationMinutesApprox": 40,
+      "event": "直连 PyPI 等待后改用镜像源，以及首次拉取约 743 MB 的 Playwright 镜像。",
+      "note": "用户报告两次网络相关等待约占构建与验证阶段大部分时间；纯测试执行不到 2 分钟。该记录不作为质量分或人工体验调整依据。"
+    }
+  ],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "No adjustment has been assigned."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen_pending_review",
+  "candidate": {
+    "agent": "Claude Code",
+    "model": "claude-fable-5",
+    "branch": "v0.1.0/claudecode-claude-fable-5",
+    "resultCommit": "9e11644de468e1008784c42ff093ce6a0c96aae9"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "frozen_pending_review",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed",
+    "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "reportedValidationEvidence": "用户提供的完成摘要，以及协调方在 2026-07-26 依次重跑的 pytest 单元 47 例、pytest 双库集成 19 例、Vitest 组件 5 例、Playwright 浏览器主链 3 例和固定数据集校验。",
+    "coordinatorFrozen": true,
+    "independentlyVerified": true,
+    "independentVerificationScope": "协调方验证了固定数据集及项目文档所列四层测试；首轮独立评审、评分和更广泛的运行复现仍待 Grok 与 Codex 完成。",
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/claudecode-claude-fable-5",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "decisionharbor-claudecode-claude-fable-5",
+        "state": "stopped",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/claudecode-claude-fable-5",
+        "web": "http://127.0.0.1:5173",
+        "api": "http://127.0.0.1:8100",
+        "stopCommand": "./dev.sh down --remove-orphans",
+        "stopResult": "在用户明确授权后，协调方停止并移除 Web、API、DB 容器和默认网络；保留命名数据卷 decisionharbor-claudecode-claude-fable-5_dbdata。"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending_first_round",
+    "qualityScore": null
+  }
+}

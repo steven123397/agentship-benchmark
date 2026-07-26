@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Claude Code 完成摘要",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "summary": {
+    "confirmedDistinctExternalSkills": 1,
+    "cumulativeLoads": null
+  },
+  "usedExternalSkills": [
+    {"name": "bootstrap-project-governance", "phase": "governance"}
+  ],
+  "agentBuiltInSkills": {
+    "status": "not_reported",
+    "used": []
+  },
+  "notes": [
+    "Only bootstrap-project-governance was confirmed as a formal external skill invocation.",
+    "TDD, verification-before-completion, Chinese documentation, and Chinese commit conventions were reported as principles or conventions followed, not formal external skill invocations.",
+    "Unreported built-in skill usage and repeated loads are not inferred."
+  ],
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

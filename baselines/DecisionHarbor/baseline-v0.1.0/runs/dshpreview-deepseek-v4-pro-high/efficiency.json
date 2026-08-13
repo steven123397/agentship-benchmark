@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "source": "Run scaffold before DeepSeek Harness Web execution",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": null,
+    "completedAtReported": null,
+    "wallClockDurationMinutesApprox": null,
+    "wallClockNote": "待 DeepSeek Harness Web 会话结束后，根据可观测日志或用户提供的统计如实补充。"
+  },
+  "tokenUsage": {
+    "totalTokens": null,
+    "inputTokens": null,
+    "outputTokens": null,
+    "note": "待会话结束后按 Harness 可提供的口径记录；不能观测时保持 null，不估算为精确值。"
+  },
+  "environmentAndInterventions": [
+    {
+      "kind": "standard_harness_setup",
+      "observation": "协调方从冻结 baseline 创建独立工作树，并启动 DeepSeek Harness Web。模型和推理参数由用户在 Web 界面中管理。",
+      "qualityImpact": "none"
+    }
+  ],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "未分配过程调整；Harness 启动和用户自行配置模型、推理参数仅作为环境事实记录，不改变质量分。"
+  }
+}

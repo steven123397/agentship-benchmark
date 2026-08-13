@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "source": "Run scaffold before DeepSeek Harness Web execution",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "summary": {
+    "reportedDistinctExternalSkills": null,
+    "cumulativeLoads": null
+  },
+  "usedExternalSkills": [],
+  "agentBuiltInSkills": {
+    "status": "not_reported",
+    "used": []
+  },
+  "reportedSkillReads": [],
+  "notes": [
+    "Only populate this record from agent-reported session evidence after execution; do not infer unreported skill usage.",
+    "DeepSeek Harness Web configuration, including model and reasoning selection, is managed by the user and is not treated as skill evidence."
+  ],
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

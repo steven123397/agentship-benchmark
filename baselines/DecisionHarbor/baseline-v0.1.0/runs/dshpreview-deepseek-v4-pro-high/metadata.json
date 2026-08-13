@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "in_progress",
+  "candidate": {
+    "agent": "DeepSeek Harness Web",
+    "model": "deepseek-v4-pro-high",
+    "branch": "v0.1.0/dshpreview-deepseek-v4-pro-high",
+    "resultCommit": null
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "prompt_one_pending",
+    "promptOne": "pending",
+    "promptTwo": "pending",
+    "promptThree": "pending",
+    "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
+  },
+  "completion": {
+    "agentReportedComplete": false,
+    "agentReportedFinalValidation": false,
+    "coordinatorFrozen": false,
+    "independentlyVerified": false,
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/dshpreview-deepseek-v4-pro-high",
+    "pushed": false
+  },
+  "runtime": {
+    "projects": []
+  },
+  "harness": {
+    "name": "DeepSeek Harness",
+    "surface": "web",
+    "version": "0.1.0-rc.6",
+    "state": "running",
+    "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/dshpreview-deepseek-v4-pro-high",
+    "web": "http://127.0.0.1:54173",
+    "startCommand": "dsh web --host 127.0.0.1 --port 54173",
+    "startedAtUtc": "2026-08-13T14:21:20Z",
+    "healthCheck": "GET / returned HTTP 200 at 2026-08-13T14:21:20Z.",
+    "modelAndReasoningSelection": "由用户在 DeepSeek Harness Web 中自行管理；本运行档案不写入或覆盖本地 Harness 配置与认证信息。"
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending",
+    "firstRoundReports": {
+      "codex": {
+        "status": "pending"
+      },
+      "grok": {
+        "status": "pending"
+      }
+    },
+    "qualityScore": null,
+    "codexTechnicalScore": null,
+    "grokTechnicalScore": null,
+    "technicalAverage": null,
+    "humanDocumentationScore": null,
+    "humanVisualScore": null,
+    "riskFlags": []
+  }
+}

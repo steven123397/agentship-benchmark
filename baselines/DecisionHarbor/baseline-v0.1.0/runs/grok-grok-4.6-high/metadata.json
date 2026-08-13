@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "pending_human_scores",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Grok Build",
     "model": "grok-4.6-high",
@@ -13,7 +13,7 @@
   },
   "development": {
     "brief": "../../development-brief.md",
-    "currentStage": "pending_human_scores",
+    "currentStage": "first_round_scored",
     "promptOne": "completed",
     "promptTwo": "completed",
     "promptThree": "completed",
@@ -25,7 +25,7 @@
     "reportedValidationEvidence": "用户确认 Grok Build 4.6 已结束全部三段开发委托；用户提供的会话摘要记录了 75 次模型调用、Compose 与测试等待。协调方随后独立复验固定数据集、完整测试入口、四层测试和 HTTP 主链，详见 reproduction.md。",
     "coordinatorFrozen": true,
     "independentlyVerified": true,
-    "independentVerificationScope": "2026-08-13，协调方以候选 .env 的 dh-grok-46-high Compose 项目重新运行数据集校验、scripts/test.sh，以及 API 25 passed、Vitest 3 passed、Playwright 2 passed；并验证 /health、/ready、Web、允许/拒绝 SQL、多语句、行数上限和对象范围探针。两份互盲首轮报告随后均在冻结 commit 上完成；等待人工文档与视觉最终评分。结果提交与远端 SHA 一致。",
+    "independentVerificationScope": "2026-08-13，协调方以候选 .env 的 dh-grok-46-high Compose 项目重新运行数据集校验、scripts/test.sh，以及 API 25 passed、Vitest 3 passed、Playwright 2 passed；并验证 /health、/ready、Web、允许/拒绝 SQL、多语句、行数上限和对象范围探针。两份互盲首轮报告随后均在冻结 commit 上完成，用户最终给出人工文档分 4、视觉分 3。结果提交与远端 SHA 一致。",
     "runtimeStacksActive": false
   },
   "remote": {
@@ -51,7 +51,7 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_human_scores",
+    "status": "completed",
     "firstRoundReports": {
       "codex": {
         "status": "completed",
@@ -66,12 +66,12 @@
         "riskFlags": []
       }
     },
-    "qualityScore": null,
+    "qualityScore": 86.25,
     "codexTechnicalScore": 73.5,
     "grokTechnicalScore": 85,
     "technicalAverage": 79.25,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
+    "humanDocumentationScore": 4,
+    "humanVisualScore": 3,
     "riskFlags": [
       {
         "level": "P0",

@@ -11,3 +11,10 @@
 - 协调方在用户确认结束后暂存候选交付，创建结果提交 `cd8b766fa6242cf1bdb30304af6f453af6331af7`（`feat(首轮): 交付受治理 SQL 查询平台`），并推送 `v0.1.0/grokbuild-grok-4.6-high`。本地与远端 SHA 已核对一致。
 - 协调方独立运行固定数据集校验、`./scripts/test.sh`，并单独取得 API 测试 `25 passed`、Vitest `3 passed`、Playwright `2 passed` 的新鲜输出；详见 `reproduction.md`。这不是首轮评分。
 - 协调方仅执行 `docker compose --env-file .env down --remove-orphans`，停止并移除 `dh-grok-46-high` 的容器与网络，保留命名 PostgreSQL 数据卷；未停止、删除或修改任何其他 Compose 项目、网络或卷。
+
+## 首轮评审完成
+
+- 用户确认两份互盲首轮评审均已结束并写入 `codex-review.md` 与 `grok-review.md`。两份报告均以冻结提交 `cd8b766fa6242cf1bdb30304af6f453af6331af7` 为评审对象，并声明未修改候选源码、分支或结果提交。
+- Codex 技术分为 `73.5 / 90`、文档建议为 `5 / 5`；Grok 技术分为 `85 / 90`、文档建议为 `4 / 5`。技术平均分为 `79.25 / 90`，计算与风险汇总见 `review-summary.md`。
+- 两份报告都记录了 `regclass` 对象解析及 PostgreSQL 停止后的 `/ready` 误报；对 P0/P1 的分类不同。协调方未改写任何独立报告，仅按统一评分规范在汇总中确认风险标记。
+- 两份评审结束时均停止其启动的候选与并行 Compose 项目。候选命名数据卷 `dh-grok-46-high_postgres_data` 保留；未清理无关容器、网络或数据卷。

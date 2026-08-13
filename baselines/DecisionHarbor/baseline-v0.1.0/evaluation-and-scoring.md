@@ -15,6 +15,7 @@
 - ZCode：`glm-5.2-high`
 - Qoder：`Qwen3.8-Max-Preview-thinking`
 - Claude Code：`claude-fable-5`
+- DeepSeek Harness Web：`deepseek-v4-pro-high`
 
 ## 固定输入与不变量
 

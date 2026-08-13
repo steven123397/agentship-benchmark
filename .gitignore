@@ -11,3 +11,8 @@ Thumbs.db
 *.log
 tmp/
 work/
+
+# Local npm installation used to trial DeepSeek Harness
+/node_modules/
+/package.json
+/package-lock.json

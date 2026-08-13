@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen_pending_review",
+  "candidate": {
+    "agent": "Grok Build",
+    "model": "grok-4.6-high",
+    "branch": "v0.1.0/grokbuild-grok-4.6-high",
+    "resultCommit": "cd8b766fa6242cf1bdb30304af6f453af6331af7"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "frozen_pending_review",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed",
+    "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "reportedValidationEvidence": "用户确认 Grok Build 4.6 已结束全部三段开发委托；用户提供的会话摘要记录了 75 次模型调用、Compose 与测试等待。协调方随后独立复验固定数据集、完整测试入口、四层测试和 HTTP 主链，详见 reproduction.md。",
+    "coordinatorFrozen": true,
+    "independentlyVerified": true,
+    "independentVerificationScope": "2026-08-13，协调方以候选 .env 的 dh-grok-46-high Compose 项目重新运行数据集校验、scripts/test.sh，以及 API 25 passed、Vitest 3 passed、Playwright 2 passed；并验证 /health、/ready、Web、允许/拒绝 SQL、多语句、行数上限和对象范围探针。结果提交与远端 SHA 一致。",
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/grokbuild-grok-4.6-high",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "dh-grok-46-high",
+        "state": "stopped",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/grok-grok-4.6-high",
+        "web": "http://127.0.0.1:55173",
+        "api": "http://127.0.0.1:58000",
+        "stopCommand": "docker compose --env-file .env down --remove-orphans",
+        "stopResult": "协调方仅停止并移除了本候选的 Web、API、PostgreSQL 容器和默认网络；命名数据卷 dh-grok-46-high_postgres_data 保留，未触碰其他 Compose 项目。"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "pending_first_round",
+    "qualityScore": null,
+    "codexTechnicalScore": null,
+    "grokTechnicalScore": null,
+    "technicalAverage": null,
+    "humanDocumentationScore": null,
+    "humanVisualScore": null,
+    "riskFlags": []
+  }
+}

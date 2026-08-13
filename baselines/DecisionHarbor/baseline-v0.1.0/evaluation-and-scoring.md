@@ -10,6 +10,7 @@
 
 - Codex CLI：`gpt-5.6-sol-xhigh`
 - Grok Build：`grok-4.5-high`
+- Grok Build：`grok-4.6-high`
 - Kimi Code：`kimi-k3-thinking`
 - ZCode：`glm-5.2-high`
 - Qoder：`Qwen3.8-Max-Preview-thinking`

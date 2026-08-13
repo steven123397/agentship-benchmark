@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Grok Build 4.6 会话统计",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "observedStartUtc": "2026-08-13T08:33:00Z",
+    "observedLastActivityUtc": "2026-08-13T10:35:00Z",
+    "wallClockDurationMinutesApprox": 122,
+    "sessionDurationSeconds": 5787,
+    "modelApiDurationSeconds": 3689.5,
+    "toolWaitDurationMinutesApprox": 26,
+    "toolWaitDetail": "get_command_or_subagent_output 约 23.8 分钟，shell 约 2.3 分钟，主要等待 Compose 与测试。",
+    "averageFirstTokenSeconds": 35.2,
+    "averageResponseSeconds": 44.9,
+    "wallClockNote": "会话创建到上次活动为 2 小时 2 分钟；会话活跃时长为 1 小时 36 分 27 秒。墙钟与活跃时长的差额主要为轮次之间空档。"
+  },
+  "tokenUsage": {
+    "inputTokens": 8037252,
+    "cachedInputTokens": 7762944,
+    "nonCachedInputTokens": 274308,
+    "outputTokens": 55547,
+    "reasoningTokens": 129114,
+    "inputAndOutputTokens": 8092799,
+    "modelCalls": 75,
+    "finalContextTokensApprox": 196163,
+    "finalContextCapacity": 500000,
+    "note": "用户提供的输入加输出口径不含单列的 reasoning token；缓存命中约占输入的 96.6%。"
+  },
+  "developmentPhases": [
+    {"name": "文档治理", "wallClockMinutesApprox": 3.7, "modelCalls": 9},
+    {"name": "正式设计", "wallClockMinutesApprox": 21.9, "modelCalls": 11},
+    {"name": "开始实现", "wallClockMinutesApprox": 6.9, "modelCalls": 5, "result": "error 后继续"},
+    {"name": "继续实现到验证", "wallClockMinutesApprox": 59.6, "modelCalls": 45, "result": "completed"}
+  ],
+  "environmentAndInterventions": [
+    {
+      "kind": "tool_wait",
+      "observation": "候选会话报告约 26 分钟工具等待，主要为 Compose 与测试等待。",
+      "qualityImpact": "none"
+    }
+  ],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "未分配过程调整；时间、token、缓存和等待仅作为效率元数据，不改变质量分。"
+  }
+}

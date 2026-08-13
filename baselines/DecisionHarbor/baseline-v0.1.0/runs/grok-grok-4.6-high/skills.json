@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Grok Build 4.6 会话统计与 skill 摘要",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "summary": {
+    "reportedDistinctSkillNames": 8,
+    "reportedSkillReadCount": 11,
+    "confirmedDistinctExternalSkills": null,
+    "cumulativeLoads": 11
+  },
+  "usedExternalSkills": [],
+  "agentBuiltInSkills": {
+    "status": "source_provenance_not_reported",
+    "used": []
+  },
+  "reportedSkillReads": [
+    {"name": "bootstrap-project-governance", "readCount": 2, "purpose": "初始化文档治理"},
+    {"name": "chinese-documentation", "readCount": 2, "purpose": "中文文档排版"},
+    {"name": "domain-modeling", "readCount": 2, "purpose": "术语表"},
+    {"name": "writing-for-agents", "readCount": 1, "purpose": "编写 AGENTS.md"},
+    {"name": "to-spec", "readCount": 1, "purpose": "将确认结论写入设计"},
+    {"name": "design", "readCount": 1, "purpose": "设计流程；bundled 路径曾读失败一次"},
+    {"name": "codebase-design", "readCount": 1, "purpose": "模块边界"},
+    {"name": "tdd", "readCount": 1, "purpose": "策略与实现的红绿循环"}
+  ],
+  "notes": [
+    "用户报告没有使用独立 skill 运行时或子代理，均为读取 SKILL.md 后按规则执行。",
+    "会话摘要未为每个 skill 标明外部或内建来源；为避免反推来源，所有报告的 skill 名称保留在 reportedSkillReads，而不归类为 external 或 built-in。"
+  ],
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

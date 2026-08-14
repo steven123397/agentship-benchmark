@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "pending_human_scores",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Kimi Code",
     "model": "kimi-k3-thinking",
@@ -40,13 +40,13 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_human_scores",
-    "qualityScore": null,
+    "status": "completed",
+    "qualityScore": 82.5,
     "codexTechnicalScore": 68,
     "grokTechnicalScore": 87,
     "technicalAverage": 77.5,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
+    "humanDocumentationScore": 3,
+    "humanVisualScore": 2,
     "riskFlags": [
       {
         "level": "P0",
@@ -55,6 +55,7 @@
         "summary": "CTE 同名遮蔽和函数型二次 SQL 可读取系统对象。"
       }
     ],
-    "manualDeveloperExperienceAdjustment": -2
+    "manualDeveloperExperienceAdjustment": -2,
+    "experienceAdjustedDisplayScore": 80.5
   }
 }

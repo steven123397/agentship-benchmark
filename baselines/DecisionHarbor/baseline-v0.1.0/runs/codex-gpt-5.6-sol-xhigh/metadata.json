@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "pending_human_scores",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Codex CLI",
     "model": "gpt-5.6-sol-xhigh",
@@ -46,13 +46,13 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_human_scores",
-    "qualityScore": null,
+    "status": "completed",
+    "qualityScore": 94,
     "codexTechnicalScore": 81.5,
     "grokTechnicalScore": 88.5,
     "technicalAverage": 85,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
+    "humanDocumentationScore": 5,
+    "humanVisualScore": 4,
     "riskFlags": [
       {
         "level": "P0",

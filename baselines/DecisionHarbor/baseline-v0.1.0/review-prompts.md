@@ -6,6 +6,7 @@
 
 已完成本地归档清理的候选不再保留原工作树。表中原路径只作历史记录；需要重新复现时，由协调方先从对应 `metadata.json` 的远端分支和 `candidate.resultCommit` 建立临时只读工作树，再使用下方模板。
 
+索引表：
 | 编号 | 审查者 | 候选 | 冻结 commit | 唯一报告文件 |
 | --- | --- | --- | --- | --- |
 | 1 | Grok Build | Codex CLI | `6e3964f05b72d44a50f7d2a7657304a83cfa11c1` | `runs/codex-gpt-5.6-sol-xhigh/grok-review.md` |

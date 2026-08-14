@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "pending_human_scores",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "ZCode",
     "model": "glm-5.2-high",
@@ -66,13 +66,13 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_human_scores",
-    "qualityScore": null,
+    "status": "completed",
+    "qualityScore": 79.5,
     "codexTechnicalScore": 62,
     "grokTechnicalScore": 87,
     "technicalAverage": 74.5,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
+    "humanDocumentationScore": 3,
+    "humanVisualScore": 2,
     "riskFlags": [
       {
         "level": "P0",

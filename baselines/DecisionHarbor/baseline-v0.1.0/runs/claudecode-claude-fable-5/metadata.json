@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "frozen_pending_review",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Claude Code",
     "model": "claude-fable-5",
@@ -13,7 +13,7 @@
   },
   "development": {
     "brief": "../../development-brief.md",
-    "currentStage": "frozen_pending_review",
+    "currentStage": "first_round_scored",
     "promptOne": "completed",
     "promptTwo": "completed",
     "promptThree": "completed",
@@ -25,7 +25,7 @@
     "reportedValidationEvidence": "用户提供的完成摘要，以及协调方在 2026-07-26 依次重跑的 pytest 单元 47 例、pytest 双库集成 19 例、Vitest 组件 5 例、Playwright 浏览器主链 3 例和固定数据集校验。",
     "coordinatorFrozen": true,
     "independentlyVerified": true,
-    "independentVerificationScope": "协调方验证了固定数据集及项目文档所列四层测试；首轮独立评审、评分和更广泛的运行复现仍待 Grok 与 Codex 完成。",
+    "independentVerificationScope": "协调方验证了固定数据集及项目文档所列四层测试；Codex 与 Grok 的互盲首轮报告均已完成。汇总已记录两份技术分、风险标记、运行过程事实及用户最终人工文档与视觉评分。",
     "runtimeStacksActive": false
   },
   "remote": {
@@ -42,7 +42,7 @@
         "web": "http://127.0.0.1:5173",
         "api": "http://127.0.0.1:8100",
         "stopCommand": "./dev.sh down --remove-orphans",
-        "stopResult": "在用户明确授权后，协调方停止并移除 Web、API、DB 容器和默认网络；保留命名数据卷 decisionharbor-claudecode-claude-fable-5_dbdata。"
+        "stopResult": "在用户明确授权后，协调方停止并移除 Web、API、DB 容器和默认网络；当时保留命名数据卷 decisionharbor-claudecode-claude-fable-5_dbdata。首轮评审结束后的现场检查发现该卷已不存在；Grok 报告声明随后执行过 ./dev.sh down --remove-orphans --volumes。未尝试重建或恢复该卷。"
       }
     ]
   },
@@ -51,7 +51,29 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_first_round",
-    "qualityScore": null
+    "status": "completed",
+    "firstRoundReports": {
+      "codex": {
+        "status": "completed",
+        "technicalScore": 77,
+        "documentationRecommendation": 5,
+        "riskFlags": ["P0"]
+      },
+      "grok": {
+        "status": "completed",
+        "technicalScore": 88.5,
+        "documentationRecommendation": 5,
+        "riskFlags": []
+      }
+    },
+    "technicalAverage": 82.75,
+    "riskFlags": {
+      "P0": "confirmed",
+      "P1": "not_triggered",
+      "P2": "not_triggered"
+    },
+    "humanDocumentationScore": 5,
+    "humanVisualScore": 3,
+    "qualityScore": 90.75
   }
 }

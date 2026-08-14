@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "frozen_pending_review",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Qoder",
     "model": "Qwen3.8-Max-Preview-thinking",
@@ -13,7 +13,7 @@
   },
   "development": {
     "brief": "../../development-brief.md",
-    "currentStage": "frozen_pending_review",
+    "currentStage": "first_round_scored",
     "promptOne": "completed",
     "promptTwo": "completed",
     "promptThree": "completed",
@@ -48,7 +48,20 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_first_round",
-    "qualityScore": null
+    "status": "completed",
+    "qualityScore": 79.5,
+    "codexTechnicalScore": 65.5,
+    "grokTechnicalScore": 83.5,
+    "technicalAverage": 74.5,
+    "humanDocumentationScore": 3,
+    "humanVisualScore": 2,
+    "riskFlags": [
+      {
+        "level": "P0",
+        "confirmed": true,
+        "evidenceReport": "codex-review.md",
+        "summary": "query_to_xml 的 SQL 字符串参数可读取 pg_catalog.pg_class。"
+      }
+    ]
   }
 }

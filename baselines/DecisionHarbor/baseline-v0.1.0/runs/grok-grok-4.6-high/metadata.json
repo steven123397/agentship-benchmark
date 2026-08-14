@@ -37,14 +37,30 @@
     "projects": [
       {
         "name": "dh-grok-46-high",
-        "state": "stopped",
+        "state": "removed",
         "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/grok-grok-4.6-high",
         "web": "http://127.0.0.1:55173",
         "api": "http://127.0.0.1:58000",
         "stopCommand": "docker compose --env-file .env down --remove-orphans",
-        "stopResult": "协调方仅停止并移除了本候选的 Web、API、PostgreSQL 容器和默认网络；两份首轮评审各自复现后也报告已停止其启动的候选与并行项目。命名数据卷 dh-grok-46-high_postgres_data 保留，未触碰其他 Compose 项目。"
+        "stopResult": "协调方与两份首轮评审已停止并移除本候选及其并行验证项目的容器和网络；用户随后明确授权清理，命名数据卷 dh-grok-46-high_postgres_data 已删除。未触碰其他 Compose 项目。"
       }
     ]
+  },
+  "archive": {
+    "localWorktree": {
+      "state": "removed",
+      "formerPath": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/grok-grok-4.6-high",
+      "removedOn": "2026-08-14"
+    },
+    "localBranch": {
+      "state": "retained"
+    },
+    "dockerCleanup": {
+      "candidateContainersAndNetworks": "none_present_at_cleanup",
+      "removedVolumes": ["dh-grok-46-high_postgres_data"],
+      "removedImageRepositoryPrefixes": ["dh-grok-46-high", "dh-grok-46-high-rev2"],
+      "sharedBaseImagesAndGlobalCachesRetained": true
+    }
   },
   "skillEnvironment": {
     "sharedExternalSkillsManifest": "../../shared-external-skills.json",

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "status": "in_progress",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "DeepSeek Harness Web",
     "model": "deepseek-v4-pro-high",
     "branch": "v0.1.0/dshpreview-deepseek-v4-pro-high",
-    "resultCommit": null
+    "resultCommit": "4306278abbfb4a65d6d52a6e701c1e308fe2ed46"
   },
   "baseline": {
     "tag": "baseline-v0.1.0",
@@ -13,59 +13,96 @@
   },
   "development": {
     "brief": "../../development-brief.md",
-    "currentStage": "prompt_one_pending",
-    "promptOne": "pending",
-    "promptTwo": "pending",
-    "promptThree": "pending",
+    "currentStage": "first_round_scored",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed",
     "promptThreeStartCondition": "Prompt one and prompt two are complete; no other candidate Compose, database, browser, end-to-end, or final reproduction task is active."
   },
   "completion": {
-    "agentReportedComplete": false,
-    "agentReportedFinalValidation": false,
-    "coordinatorFrozen": false,
-    "independentlyVerified": false,
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "reportedValidationEvidence": "用户报告三轮开发委托均已执行完成，候选工作树的项目状态文件报告统一测试通过；协调方随后完成独立复现，范围见 independentVerificationScope 与 reproduction.md。",
+    "coordinatorFrozen": true,
+    "independentlyVerified": true,
+    "independentVerificationScope": "协调方验证了固定数据集、统一测试入口、health/ready、允许与拒绝 SQL、结果行数上限、双库权限、数据库故障恢复、浏览器主链和双 Compose 并行隔离；并复现了多种系统对象访问绕过，详见 reproduction.md。两份互盲首轮报告随后均在冻结 commit 上完成，用户最终给出人工文档分 3、视觉分 3。",
     "runtimeStacksActive": false
   },
   "remote": {
     "repository": "git@github.com:steven123397/decision-harbor.git",
     "branch": "v0.1.0/dshpreview-deepseek-v4-pro-high",
-    "pushed": false
+    "pushed": true
   },
   "runtime": {
-    "projects": []
+    "projects": [
+      {
+        "name": "decisionharbor",
+        "state": "removed",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/dshpreview-deepseek-v4-pro-high",
+        "web": "http://127.0.0.1:5173",
+        "api": "http://127.0.0.1:8010",
+        "stopCommand": "docker compose down --remove-orphans",
+        "stopResult": "候选 Web、API、PostgreSQL 容器和默认网络已停止并移除；用户随后明确授权清理，命名数据卷 decisionharbor_pgdata 已删除。"
+      },
+      {
+        "name": "dhdeepverify2",
+        "state": "removed",
+        "web": "http://127.0.0.1:55174",
+        "api": "http://127.0.0.1:58110",
+        "stopCommand": "docker compose down --volumes --remove-orphans",
+        "stopResult": "并行隔离验证实例的容器、网络和专用卷均已移除。"
+      }
+    ]
   },
-  "harness": {
-    "name": "DeepSeek Harness",
-    "surface": "web",
-    "version": "0.1.0-rc.6",
-    "state": "running",
-    "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/dshpreview-deepseek-v4-pro-high",
-    "web": "http://127.0.0.1:54173",
-    "startCommand": "dsh web --host 127.0.0.1 --port 54173",
-    "startedAtUtc": "2026-08-13T14:21:20Z",
-    "healthCheck": "GET / returned HTTP 200 at 2026-08-13T14:21:20Z.",
-    "modelAndReasoningSelection": "由用户在 DeepSeek Harness Web 中自行管理；本运行档案不写入或覆盖本地 Harness 配置与认证信息。"
+  "archive": {
+    "localWorktree": {
+      "state": "removed",
+      "formerPath": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/dshpreview-deepseek-v4-pro-high",
+      "removedOn": "2026-08-14"
+    },
+    "localBranch": {
+      "state": "retained"
+    },
+    "dockerCleanup": {
+      "candidateContainersAndNetworks": "none_present_at_cleanup",
+      "removedVolumes": ["decisionharbor_pgdata"],
+      "removedImageRepositoryPrefixes": ["decisionharbor", "dhdeepverify2", "dhdeepreview", "dhds-review2"],
+      "sharedBaseImagesAndGlobalCachesRetained": true
+    }
   },
   "skillEnvironment": {
     "sharedExternalSkillsManifest": "../../shared-external-skills.json",
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending",
+    "status": "completed",
     "firstRoundReports": {
       "codex": {
-        "status": "pending"
+        "status": "completed",
+        "technicalScore": 73.5,
+        "documentationRecommendation": 4,
+        "riskFlags": ["P0"]
       },
       "grok": {
-        "status": "pending"
+        "status": "completed",
+        "technicalScore": 83.5,
+        "documentationRecommendation": 3,
+        "riskFlags": ["P0"]
       }
     },
-    "qualityScore": null,
-    "codexTechnicalScore": null,
-    "grokTechnicalScore": null,
-    "technicalAverage": null,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
-    "riskFlags": []
+    "qualityScore": 84.5,
+    "codexTechnicalScore": 73.5,
+    "grokTechnicalScore": 83.5,
+    "technicalAverage": 78.5,
+    "humanDocumentationScore": 3,
+    "humanVisualScore": 3,
+    "riskFlags": [
+      {
+        "level": "P0",
+        "confirmed": true,
+        "evidenceReport": "codex-review.md, grok-review.md",
+        "summary": "用户 SQL 可通过限定 CTE 同名遮蔽、query_to_xml 和对象标识类型转换访问 PostgreSQL 系统对象，绕过 AST 对象范围治理。"
+      }
+    ]
   }
 }

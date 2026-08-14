@@ -1,20 +1,37 @@
 {
   "schemaVersion": 1,
-  "source": "Run scaffold before DeepSeek Harness Web execution",
+  "source": "用户提供的 DeepSeek Harness Web Skill 使用摘要",
   "sharedExternalSkillsManifest": "../../shared-external-skills.json",
   "summary": {
-    "reportedDistinctExternalSkills": null,
+    "reportedDistinctExternalSkills": 3,
+    "confirmedDistinctExternalSkills": 3,
     "cumulativeLoads": null
   },
-  "usedExternalSkills": [],
+  "usedExternalSkills": [
+    {
+      "name": "bootstrap-project-governance",
+      "phase": "governance",
+      "purpose": "建立最小文档治理体系及 AGENTS、index、design、plan、status 分工。"
+    },
+    {
+      "name": "to-spec",
+      "phase": "design",
+      "purpose": "把已确认结论编译为 docs/design/system-design.md。"
+    },
+    {
+      "name": "domain-modeling",
+      "phase": "design",
+      "purpose": "规范领域术语并产出 docs/design/CONTEXT.md。"
+    }
+  ],
   "agentBuiltInSkills": {
     "status": "not_reported",
     "used": []
   },
-  "reportedSkillReads": [],
   "notes": [
-    "Only populate this record from agent-reported session evidence after execution; do not infer unreported skill usage.",
-    "DeepSeek Harness Web configuration, including model and reasoning selection, is managed by the user and is not treated as skill evidence."
+    "其余 skill 名称只出现在系统目录中，用户确认未加载。",
+    "实现阶段采用先写失败测试再实现的 TDD 式过程，但没有显式加载 tdd skill，因此不计入 Skill 使用。",
+    "未报告重复加载次数，不作推断。"
   ],
   "scoringTreatment": "configuration_and_efficiency_metadata_only"
 }

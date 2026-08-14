@@ -1,28 +1,33 @@
 {
   "schemaVersion": 1,
-  "source": "Run scaffold before DeepSeek Harness Web execution",
+  "source": "用户提供的 DeepSeek Harness Web 会话统计",
   "qualityScoreIncluded": false,
   "timing": {
     "startedAtReported": null,
     "completedAtReported": null,
+    "activeWorkDurationMinutesApprox": 102,
     "wallClockDurationMinutesApprox": null,
-    "wallClockNote": "待 DeepSeek Harness Web 会话结束后，根据可观测日志或用户提供的统计如实补充。"
+    "reportedPhaseDurationsMinutesApprox": [76, 26],
+    "wallClockNote": "用户报告实际活跃工作约 1.7 小时，其中两段可见阶段统计约为 76 分钟和 26 分钟；未提供完整墙钟起止时间。",
+    "conversationTurns": 10
   },
   "tokenUsage": {
-    "totalTokens": null,
-    "inputTokens": null,
-    "outputTokens": null,
-    "note": "待会话结束后按 Harness 可提供的口径记录；不能观测时保持 null，不估算为精确值。"
+    "newTokensApprox": 567000,
+    "newInputTokensApprox": 336000,
+    "outputTokensApprox": 231000,
+    "reasoningTokensIncludedInOutputApprox": 169000,
+    "cachedInputTokensReadApprox": 22760000,
+    "note": "以上均为用户提供的近似统计。新 token 合计为新输入与输出之和；输出已包含 reasoning。缓存命中读取是累计前缀复用量，不计入新 token。"
   },
-  "environmentAndInterventions": [
-    {
-      "kind": "standard_harness_setup",
-      "observation": "协调方从冻结 baseline 创建独立工作树，并启动 DeepSeek Harness Web。模型和推理参数由用户在 Web 界面中管理。",
-      "qualityImpact": "none"
-    }
-  ],
+  "toolActivity": {
+    "runCodeDispatches": 139,
+    "nestedCodeDispatches": 197,
+    "toolResults": 135,
+    "note": "用户提供的 Harness 统计；不同层级计数不可直接相加为独立工具调用总数。"
+  },
+  "environmentAndInterventions": [],
   "manualDeveloperExperienceAdjustment": {
     "points": 0,
-    "application": "未分配过程调整；Harness 启动和用户自行配置模型、推理参数仅作为环境事实记录，不改变质量分。"
+    "application": "未分配过程调整；会话时间、token 和工具活动只作为效率元数据，不改变质量分。"
   }
 }

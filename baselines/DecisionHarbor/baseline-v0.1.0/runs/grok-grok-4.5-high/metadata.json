@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "pending_human_scores",
+  "status": "first_round_scored",
   "candidate": {
     "agent": "Grok Build",
     "model": "grok-4.5-high",
@@ -44,13 +44,13 @@
     "candidateUsageRecord": "skills.json"
   },
   "review": {
-    "status": "pending_human_scores",
-    "qualityScore": null,
+    "status": "completed",
+    "qualityScore": 73,
     "codexTechnicalScore": 61,
     "grokTechnicalScore": 75,
     "technicalAverage": 68,
-    "humanDocumentationScore": null,
-    "humanVisualScore": null,
+    "humanDocumentationScore": 3,
+    "humanVisualScore": 2,
     "riskFlags": [
       {
         "level": "P0",

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "first_round_scored",
+  "candidate": {
+    "agent": "ZCode",
+    "model": "glm-5.3-high",
+    "branch": "v0.1.0/zcode-glm-5.3-high",
+    "worktree": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/zcode-glm-5.3-high",
+    "resultCommit": "a5811b218e42183f9b46aa2a2555194a658c7cf5"
+  },
+  "baseline": {
+    "tag": "baseline-v0.1.0",
+    "commit": "1fb48f499d67677a47fb9b60e1f99346b46e0aee"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "currentStage": "first_round_scored",
+    "promptOne": "completed",
+    "promptTwo": "completed",
+    "promptThree": "completed"
+  },
+  "completion": {
+    "agentReportedComplete": true,
+    "agentReportedFinalValidation": true,
+    "reportedValidationEvidence": "候选状态文档报告 pytest 59 passed、Vitest 4 passed、Playwright 2 passed，make up 可幂等收敛且 /ready 为 HTTP 200。协调方未复现这些结果，详见 reproduction.md。",
+    "coordinatorFrozen": true,
+    "independentlyVerified": false,
+    "independentVerificationScope": "沿用本轮用户决定，冻结阶段不重复运行产品测试、Compose、HTTP、浏览器或安全探针；仅核对候选身份、完整结果 SHA、工作树洁净状态、baseline 祖先关系和远端分支 SHA。新鲜运行证据由两位独立评审分别取得。",
+    "runtimeStacksActive": false
+  },
+  "remote": {
+    "repository": "git@github.com:steven123397/decision-harbor.git",
+    "branch": "v0.1.0/zcode-glm-5.3-high",
+    "pushed": true
+  },
+  "runtime": {
+    "projects": [
+      {
+        "name": "decision-harbor",
+        "state": "stopped",
+        "workingDirectory": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/zcode-glm-5.3-high",
+        "web": "http://127.0.0.1:8080",
+        "api": "http://127.0.0.1:8081",
+        "stopCommand": "docker compose -f deploy/compose.yaml -p decision-harbor down --remove-orphans",
+        "stopResult": "候选 Web、API、PostgreSQL 容器和默认网络已停止并移除；命名数据卷 decision-harbor_pgdata 保留。"
+      }
+    ]
+  },
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": {
+    "status": "completed",
+    "firstRoundReports": {
+      "codex": {
+        "status": "completed",
+        "technicalScore": 68.5,
+        "documentationRecommendation": 3,
+        "riskFlags": ["P0"]
+      },
+      "grok": {
+        "status": "completed",
+        "technicalScore": 79.5,
+        "documentationRecommendation": 4,
+        "riskFlags": []
+      }
+    },
+    "qualityScore": 81,
+    "codexTechnicalScore": 68.5,
+    "grokTechnicalScore": 79.5,
+    "technicalAverage": 74,
+    "humanDocumentationScore": 4,
+    "humanVisualScore": 3,
+    "riskFlags": [
+      {
+        "level": "P0",
+        "confirmed": true,
+        "evidenceReport": "codex-review.md",
+        "summary": "用户 SQL 可通过全局 CTE 名称例外、regclass 类型转换和 query_to_xml 内嵌 SQL 访问或解析 PostgreSQL 系统对象。"
+      }
+    ]
+  }
+}

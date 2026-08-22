@@ -25,6 +25,10 @@
 | 14 | Codex CLI | Grok Build 4.6（grok-4.6-high） | 冻结后读取 Grok Build 4.6 `metadata.json` 的 `candidate.resultCommit` | `runs/grok-grok-4.6-high/codex-review.md` |
 | 15 | Grok Build | DeepSeek Harness Web（deepseek-v4-pro-high） | 冻结后读取 DeepSeek Harness Web `metadata.json` 的 `candidate.resultCommit` | `runs/dshpreview-deepseek-v4-pro-high/grok-review.md` |
 | 16 | Codex CLI | DeepSeek Harness Web（deepseek-v4-pro-high） | 冻结后读取 DeepSeek Harness Web `metadata.json` 的 `candidate.resultCommit` | `runs/dshpreview-deepseek-v4-pro-high/codex-review.md` |
+| 17 | Grok Build | Codex CLI（gpt-5.6-luna-max） | `1dfb4a4d4d441350b6035ea36eacf414cb9e4023` | `runs/codex-gpt-5.6-luna-max/grok-review.md` |
+| 18 | Codex CLI | Codex CLI（gpt-5.6-luna-max） | `1dfb4a4d4d441350b6035ea36eacf414cb9e4023` | `runs/codex-gpt-5.6-luna-max/codex-review.md` |
+| 19 | Grok Build | ZCode（glm-5.3-high） | `a5811b218e42183f9b46aa2a2555194a658c7cf5` | `runs/zcode-glm-5.3-high/grok-review.md` |
+| 20 | Codex CLI | ZCode（glm-5.3-high） | `a5811b218e42183f9b46aa2a2555194a658c7cf5` | `runs/zcode-glm-5.3-high/codex-review.md` |
 
 ## 使用方式
 

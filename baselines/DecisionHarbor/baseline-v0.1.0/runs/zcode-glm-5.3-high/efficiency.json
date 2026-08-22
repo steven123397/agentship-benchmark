@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 ZCode GLM-5.3 High 会话统计",
+  "qualityScoreIncluded": false,
+  "timing": {
+    "startedAtReported": "2026-08-14T16:01:00+08:00",
+    "completedAtReported": "2026-08-14T18:05:00+08:00",
+    "wallClockDurationMinutesApprox": 124,
+    "phaseDurationsMinutesApprox": {
+      "governance": 35,
+      "design": 12,
+      "implementationAndVerification": 75
+    },
+    "implementationBreakdownMinutesApprox": {
+      "dockerBuildAndRestartWait": 30,
+      "effectiveCodingAndDebugging": 45
+    }
+  },
+  "toolActivity": {
+    "totalCallsApprox": 160,
+    "phaseCallsApprox": {
+      "governance": 29,
+      "design": 20,
+      "implementation": 110
+    },
+    "categoryCallsApprox": {
+      "bash": 75,
+      "write": 45,
+      "edit": 20,
+      "taskOutput": 10,
+      "read": 10,
+      "todoWrite": 9,
+      "skill": 3
+    },
+    "note": "所有数字均为用户提供的近似值；阶段和类别统计经过取整，且类别口径可能重叠，不应机械相加。"
+  },
+  "reportedOutput": {
+    "lines": 5291,
+    "scope": "API 代码与测试、Web、部署配置和全部文档",
+    "note": "这是用户报告的产出规模；Git 暂存差异按自身行数统计为 5380 行新增、4 行删除，两者统计口径不同。"
+  },
+  "reportedDevelopmentExperience": {
+    "fullComposeBuilds": 4,
+    "noCacheBuildsIncluded": 1,
+    "issuesFixed": 10,
+    "issueSummary": [
+      "PostgreSQL 18 卷路径",
+      "initdb 重复行",
+      "DSN 字段名",
+      "镜像拷贝路径",
+      "Identity 用法",
+      "外键 schema 限定",
+      "psycopg COPY 写法",
+      "schema USAGE",
+      "search_path",
+      "platform 数据库 CONNECT 收窄"
+    ]
+  },
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "未分配过程调整；时间、工具调用和调试过程只作为效率元数据，不改变质量分。"
+  }
+}

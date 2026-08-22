@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Codex 会话统计，并由协调方核对对应 rollout JSONL 路径",
+  "qualityScoreIncluded": false,
+  "session": {
+    "id": "019ffede-41b4-7de0-a5c9-25b4b0882742",
+    "recordPath": "/home/liangjiaqi/.codex/sessions/2026/08/14/rollout-2026-08-14T14-03-26-019ffede-41b4-7de0-a5c9-25b4b0882742.jsonl"
+  },
+  "timing": {
+    "startedAt": "2026-08-14T06:04:29Z",
+    "completedAtApprox": "2026-08-14T08:06:05Z",
+    "wallClockDurationSecondsApprox": 7296,
+    "wallClockDurationMinutesApprox": 121.6
+  },
+  "tokenUsage": {
+    "totalTokens": 39591711,
+    "inputTokens": 39400926,
+    "outputTokens": 190785,
+    "cachedInputTokens": 38129408,
+    "reasoningOutputTokens": 87362,
+    "note": "统计覆盖整个会话，包括系统上下文、缓存输入、工具调用和实现过程；不是仅统计用户文字或代码生成。totalTokens 等于 inputTokens 与 outputTokens 之和，cachedInputTokens 已包含在 inputTokens 中。"
+  },
+  "toolActivity": null,
+  "environmentAndInterventions": [],
+  "manualDeveloperExperienceAdjustment": {
+    "points": 0,
+    "application": "未分配过程调整；会话时间与 token 只作为效率元数据，不改变质量分。"
+  }
+}

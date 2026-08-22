@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "source": "用户提供的 Codex 会话 Skill 使用统计，并由协调方核对对应会话末尾摘要",
+  "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+  "summary": {
+    "reportedDistinctSkills": 6,
+    "confirmedDistinctSkills": 6,
+    "cumulativeLoads": null
+  },
+  "usedSkills": [
+    {
+      "name": "bootstrap-project-governance",
+      "purpose": "建立最小项目文档治理结构。"
+    },
+    {
+      "name": "writing-for-agents",
+      "purpose": "整理供 Agent 长期使用的项目规则。"
+    },
+    {
+      "name": "chinese-documentation",
+      "purpose": "统一中文技术文档的术语与排版。"
+    },
+    {
+      "name": "codebase-design",
+      "purpose": "设计模块职责、接口边界与测试接缝。"
+    },
+    {
+      "name": "tdd",
+      "purpose": "通过失败测试驱动可观察行为实现。"
+    },
+    {
+      "name": "frontend-design",
+      "purpose": "实现并完善最小查询工作台。"
+    }
+  ],
+  "notes": [
+    "未报告重复加载次数，不作推断。",
+    "Skill 使用只作为配置与效率元数据，不影响质量评分。"
+  ],
+  "scoringTreatment": "configuration_and_efficiency_metadata_only"
+}

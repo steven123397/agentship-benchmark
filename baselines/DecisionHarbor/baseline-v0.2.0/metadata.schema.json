@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "metadata.schema.json",
+  "title": "DecisionHarbor v0.2.0 candidate metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "candidate", "baseline", "development", "completion", "skillEnvironment"],
+  "properties": {
+    "schemaVersion": {"const": 2},
+    "status": {
+      "enum": ["prepared", "planning", "implementing", "agent_reported_complete", "frozen", "first_round_reviewed", "first_round_scored"]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "agent", "model", "harness", "branch", "worktree", "planningCommit", "resultCommit"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "agent": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1},
+        "harness": {"type": ["string", "null"]},
+        "branch": {"type": "string", "minLength": 1},
+        "worktree": {"type": "string", "minLength": 1},
+        "planningCommit": {"oneOf": [{"type": "null"}, {"$ref": "#/definitions/sha"}]},
+        "resultCommit": {"oneOf": [{"type": "null"}, {"$ref": "#/definitions/sha"}]}
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "commit"],
+      "properties": {
+        "tag": {"const": "baseline-v0.2.0"},
+        "commit": {"const": "9355032ecadd6d3c940d7977fe381f9f8a93b1ab"}
+      }
+    },
+    "development": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brief", "workflowRecord", "currentStage", "ticketCounts"],
+      "properties": {
+        "brief": {"const": "../../development-brief.md"},
+        "workflowRecord": {"const": "workflow.json"},
+        "currentStage": {"type": "string", "minLength": 1},
+        "ticketCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["total", "resolved", "blocked", "wontfix"],
+          "properties": {
+            "total": {"type": "integer", "minimum": 0},
+            "resolved": {"type": "integer", "minimum": 0},
+            "blocked": {"type": "integer", "minimum": 0},
+            "wontfix": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agentReportedComplete", "coordinatorFrozen", "independentlyVerified", "independentVerificationScope"],
+      "properties": {
+        "agentReportedComplete": {"type": "boolean"},
+        "coordinatorFrozen": {"type": "boolean"},
+        "independentlyVerified": {"type": "boolean"},
+        "independentVerificationScope": {"type": ["string", "null"]}
+      }
+    },
+    "remote": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["repository", "branch", "pushed"],
+      "properties": {
+        "repository": {"type": "string"},
+        "branch": {"type": "string"},
+        "pushed": {"type": "boolean"}
+      }
+    },
+    "runtime": {"type": ["object", "null"]},
+    "skillEnvironment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sharedExternalSkillsManifest", "candidateUsageRecord"],
+      "properties": {
+        "sharedExternalSkillsManifest": {"const": "../../shared-external-skills.json"},
+        "candidateUsageRecord": {"const": "skills.json"}
+      }
+    },
+    "review": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "firstRoundReports", "qualityScore", "riskFlags"],
+          "properties": {
+            "status": {"enum": ["not_started", "in_progress", "completed"]},
+            "firstRoundReports": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["codex", "cursor"],
+              "properties": {
+                "codex": {"$ref": "#/definitions/reviewerResult"},
+                "cursor": {"$ref": "#/definitions/reviewerResult"}
+              }
+            },
+            "qualityScore": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "riskFlags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["level", "confirmed", "evidenceReport", "summary"],
+                "properties": {
+                  "level": {"enum": ["P0", "P1", "P2"]},
+                  "confirmed": {"type": "boolean"},
+                  "evidenceReport": {"type": "string", "minLength": 1},
+                  "summary": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "reviewerResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "report", "qualityScore", "riskFlags"],
+      "properties": {
+        "status": {"enum": ["not_started", "in_progress", "completed"]},
+        "report": {"type": "string", "minLength": 1},
+        "qualityScore": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "riskFlags": {"type": "array", "items": {"enum": ["P0", "P1", "P2"]}}
+      }
+    }
+  }
+}

@@ -68,3 +68,5 @@ Windows 与 WSL 使用同一个 AgentShip 远端仓库分阶段协作：Windows 
 - [评测原则](docs/evaluation-principles.md)
 - [DecisionHarbor baseline 准备材料](baselines/DecisionHarbor/governed-ai-data-analytics.md)
 - [路线图](docs/roadmap.md)
+- [DecisionHarbor v0.2.0 开发委托](baselines/DecisionHarbor/baseline-v0.2.0/development-brief.md)
+- [DecisionHarbor v0.2.0 评测与评分规范](baselines/DecisionHarbor/baseline-v0.2.0/evaluation-and-scoring.md)

@@ -65,8 +65,8 @@
 
 - 只有 `metadata.json` 已标记冻结且 `candidate.resultCommit` 为完整 SHA 时，才可启动首轮评审。
 - 每次评审开始、首次运行前、写报告前和结束时，都核对候选路径、分支、`HEAD` 与唯一报告文件；任一身份不一致立即停止。
-- Codex 与 Grok 互盲评审，只写各自的报告，不读取对方报告、汇总或评分卡。
-- 两份报告都完成后再汇总技术分和风险标记；人工文档分与视觉分由用户给出。不得按候选名称采用不同评分标准。
+- 使用对应版本 `review-prompts.md` 指定的两名审查者互盲评审；审查者只写自己的报告，不读取另一份报告、汇总或评分卡。
+- 两份报告都完成后再按对应版本的评分规范汇总分数和风险标记；只有该版本明确设置人工项时才由用户给出。不得按候选名称采用不同评分标准。
 - 评审发现的问题只属于被审查的冻结候选，不能转移给其他候选，也不能用后续修复提交覆盖首轮结果。
 
 ## 运行归档职责
@@ -78,12 +78,13 @@
 - `intervention-log.md`：开发过程中改变候选路径或体验的非标准人工介入；标准工作树与 Harness 启动通常不记为介入。
 - `efficiency.json`：有来源的时间、token、成本和开发体验事实；不能观测时使用 `null`，不估算精确值。
 - `skills.json`：可确认的外部 skill 和 Agent 内建 skill 使用情况；未报告的不推断。
-- `codex-review.md`、`grok-review.md`：各审查者的原始首轮报告。
+- `workflow.json`：版本评分规范要求时，索引规划与逐 ticket 会话、起止提交、tracker、TDD 和 review 证据；不复制日志或效率事实。
+- `<reviewer>-review.md`：对应版本指定的各审查者原始首轮报告，例如 `codex-review.md`、`cursor-review.md` 或历史版本的 `grok-review.md`。
 - `review-summary.md`：两份首轮报告的汇总、分歧、人工分和风险标记。
 - `scorecard.md`：最终展示分、风险与独立的过程调整，不保存详细复现日志。
 - `screenshots/`：评分或复现实际使用的截图；没有截图时不为形式完整而创建占位内容。
 
-候选专用工具或 Harness 的版本、入口和配置，只有在影响公平性、可复现性、耗时或结果解释时才记录，并放入一个最合适的事实文件。不要把相同的启动命令、端口、健康检查和配置归属重复写入 `metadata.json`、`reproduction.md`、`intervention-log.md` 与 `efficiency.json`。
+候选专用工具或 Harness 的版本、入口和配置，只有在影响公平性、可复现性、耗时或结果解释时才记录，并放入一个最合适的事实文件。不要把相同的启动命令、端口、健康检查、配置归属或工作流证据重复写入 `metadata.json`、`reproduction.md`、`intervention-log.md`、`efficiency.json` 与 `workflow.json`。
 
 ## 变更检查
 

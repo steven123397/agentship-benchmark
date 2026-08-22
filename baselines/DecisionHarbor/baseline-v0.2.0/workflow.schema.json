@@ -1,0 +1,212 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://agentship.dev/schemas/decisionharbor-v0.2.0-workflow.schema.json",
+  "title": "DecisionHarbor v0.2.0 workflow evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "candidateId",
+    "baseline",
+    "agentshipCommit",
+    "planning",
+    "tickets"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "candidateId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "commit"],
+      "properties": {
+        "tag": {
+          "const": "baseline-v0.2.0"
+        },
+        "commit": {
+          "const": "9355032ecadd6d3c940d7977fe381f9f8a93b1ab"
+        }
+      }
+    },
+    "agentshipCommit": {
+      "$ref": "#/definitions/commitSha"
+    },
+    "planning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sessionRef",
+        "startCommit",
+        "resultCommit",
+        "evidence"
+      ],
+      "properties": {
+        "sessionRef": {
+          "$ref": "#/definitions/nullableReference"
+        },
+        "startCommit": {
+          "const": "9355032ecadd6d3c940d7977fe381f9f8a93b1ab"
+        },
+        "resultCommit": {
+          "$ref": "#/definitions/nullableCommitSha"
+        },
+        "evidence": {
+          "$ref": "#/definitions/evidenceList"
+        }
+      }
+    },
+    "tickets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ticketRun"
+      }
+    }
+  },
+  "definitions": {
+    "commitSha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "nullableCommitSha": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/commitSha"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableReference": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "ref"],
+      "properties": {
+        "source": {
+          "enum": [
+            "session",
+            "git",
+            "ticket",
+            "test-output",
+            "review",
+            "coordinator"
+          ]
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidenceList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/evidence"
+      }
+    },
+    "evidenceAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": {
+          "enum": ["evidenced", "partial", "unverified"]
+        },
+        "evidence": {
+          "$ref": "#/definitions/evidenceList"
+        }
+      }
+    },
+    "reviewAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": {
+          "enum": [
+            "passed",
+            "findings-fixed",
+            "findings-open",
+            "unverified"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/definitions/evidenceList"
+        }
+      }
+    },
+    "ticketRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ticketPath",
+        "sessionRef",
+        "startCommit",
+        "resultCommit",
+        "trackerStatus",
+        "resolutionRef",
+        "tdd",
+        "review"
+      ],
+      "properties": {
+        "ticketPath": {
+          "type": "string",
+          "pattern": "^\\.scratch/decisionharbor-v0\\.2\\.0/issues/[0-9]{2}-[^/]+\\.md$"
+        },
+        "sessionRef": {
+          "$ref": "#/definitions/nullableReference"
+        },
+        "startCommit": {
+          "$ref": "#/definitions/commitSha"
+        },
+        "resultCommit": {
+          "$ref": "#/definitions/nullableCommitSha"
+        },
+        "trackerStatus": {
+          "enum": [
+            "needs-triage",
+            "needs-info",
+            "ready-for-agent",
+            "ready-for-human",
+            "wontfix",
+            "claimed",
+            "blocked",
+            "resolved"
+          ]
+        },
+        "resolutionRef": {
+          "$ref": "#/definitions/nullableReference"
+        },
+        "tdd": {
+          "$ref": "#/definitions/evidenceAssessment"
+        },
+        "review": {
+          "$ref": "#/definitions/reviewAssessment"
+        }
+      }
+    }
+  }
+}

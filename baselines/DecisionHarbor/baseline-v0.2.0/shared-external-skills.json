@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "scope": "DecisionHarbor baseline-v0.2.0 候选共同可见的用户级外部 skill 环境快照",
+  "sourceDirectory": "/home/liangjiaqi/.agents/skills",
+  "sourceManifest": "/home/liangjiaqi/.agents/sources.lock.yaml",
+  "capturedAt": "2026-08-22",
+  "operationalFreezeRequired": false,
+  "exclusions": [
+    "Agent 或 Harness 自带、内置或按需提供的 skills；这些属于候选 Harness 能力，不纳入共同外部 skill 基线。"
+  ],
+  "hashes": {
+    "algorithm": "sha256",
+    "treeHashMethod": "在每个 skill 目录内按相对路径排序全部普通文件，对 sha256sum 输出再次计算 SHA-256；路径以 ./ 开头。"
+  },
+  "sources": {
+    "mattpocock-skills": {
+      "repository": "https://github.com/mattpocock/skills.git",
+      "pinnedCommit": "6acc160e4e0cd062dbbbd7a1b26ae92855edf07e",
+      "packageVersion": "1.2.3",
+      "skillCount": 35
+    },
+    "superpowers-zh": {
+      "repository": "https://github.com/jnMetaCode/superpowers-zh.git",
+      "pinnedCommit": "84026e57664cbb4d042f22b816db250f84890d62",
+      "packageVersion": "1.7.0",
+      "skillCount": 3
+    }
+  },
+  "skills": [
+    {"name":"ask-matt","source":"mattpocock-skills","skillMdSha256":"3d38910535f5f01e15bc5fd7f6ca8880d628cd248741f08e6780dd7c1828e832","treeSha256":"4836ce539fb28009b14b416357877ba9f13f4c945124702f4c5c107edfd70928"},
+    {"name":"chinese-commit-conventions","source":"superpowers-zh","skillMdSha256":"1fe990ad29ca247f465b1559880b867ab0d1f19e7492aa31308be262076a3bc4","treeSha256":"a09ffabc3199e5fcadbe65abf350807983e3de361acd4a807cb019a0e00dab4a"},
+    {"name":"chinese-documentation","source":"superpowers-zh","skillMdSha256":"90105c72adae7dd7c7247784def0bb56b7bcbf986570aae961fd63abf4f2ea6e","treeSha256":"3e644b023323f8409376b8d85f64a67085096ef3b6f8034d119a34af7ff5f0dd"},
+    {"name":"chinese-git-workflow","source":"superpowers-zh","skillMdSha256":"ded9c64985ed4904b77cfc2d03f3641fef9e4300e5a3fa6a22a513706805a02b","treeSha256":"08c03d405f4815da2436f466844e1e147dc7a9795bc59090ef9b70574de4998b"},
+    {"name":"claude-handoff","source":"mattpocock-skills","skillMdSha256":"6794fb90a8c61835ef0ad4c90009960312f83a129924c6b9d160d38298ad2f6b","treeSha256":"2101a41e10f10451b19cccfb90a893550c17904d2e78ea2042a59f5696ce6738"},
+    {"name":"code-review","source":"mattpocock-skills","skillMdSha256":"4e8eeefbf3bd32ec2c911ed6c7db103866ce11fedc98b1f8e358d2e1cada3895","treeSha256":"0bfa6a1e0aba3a657d221c9579b5e7918b147747fbeea03ad696f104f0fef767"},
+    {"name":"codebase-design","source":"mattpocock-skills","skillMdSha256":"a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad","treeSha256":"705ee1f4ff7085e0f8bc600c55781afcc51ef79946467e9e6b56fd7f741ed83d"},
+    {"name":"diagnosing-bugs","source":"mattpocock-skills","skillMdSha256":"573142d28dc5a4d931dd4a6faa3e615e731f8e9cc65d2dd4468045a2efd6148c","treeSha256":"198d2d67c4e92ec7c600095d72d3255cefc0ae409a33409bd0bb6ac7836fbd76"},
+    {"name":"domain-modeling","source":"mattpocock-skills","skillMdSha256":"9617041db9b0f6606ecf974e2061c83596b05059b5bb20ddb884c60f147c70e9","treeSha256":"e31280449526e8e8060b3e304fd7619f4d16023899eb0e08dd831256a4f85447"},
+    {"name":"git-guardrails-claude-code","source":"mattpocock-skills","skillMdSha256":"03c4de7613c712aea336d64c467ea3ed14be2cbd52345925fe949c75c01c29f7","treeSha256":"f255f79b5ef5aec858b10592ea7efdcb548936f0c74d4189fb2511531fcd6fac"},
+    {"name":"grill-me","source":"mattpocock-skills","skillMdSha256":"caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637","treeSha256":"711e23322fe6a33d3b81bd6005f1325b52c45306d5658151d4ccb7649ff7bc0a"},
+    {"name":"grill-with-docs","source":"mattpocock-skills","skillMdSha256":"7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe","treeSha256":"1c1b25b51130bd7bc09a13f04a1fa29bef83f3eafe0073c08d00dcc1d405d7cd"},
+    {"name":"grilling","source":"mattpocock-skills","skillMdSha256":"d2498125dd20a0d3a27f03e0ebcc8e681cf42be468e2d3e3c9e8f5dadcae8d47","treeSha256":"d99c935ada473acb4fc1854b5ef89c57473ee5157a3d512f883e33cda9732948"},
+    {"name":"handoff","source":"mattpocock-skills","skillMdSha256":"7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25","treeSha256":"dcb03621f07b0c035610227b518f1dfb4d5c29f276f1bd0f7f6d33521726fa5b"},
+    {"name":"implement","source":"mattpocock-skills","skillMdSha256":"6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3","treeSha256":"ea167c22cff868eb85a8b3ab5687d4a49e29342f7d403c033b0ecef2ce9cfac2"},
+    {"name":"improve-codebase-architecture","source":"mattpocock-skills","skillMdSha256":"387f38d21367761c94d4b4dcea9e9d7d3e31f896c4decebf4984483e42125cfc","treeSha256":"930f8c704d90821b1a53bf011ccafddf4731f28bf8520242556da4819d45b022"},
+    {"name":"loop-me","source":"mattpocock-skills","skillMdSha256":"ad7110ecbd419fc312c3e7c62f496bd346a05462cdf1589b12ff7550fce3202a","treeSha256":"7b81295679829164f97d3db09d8b498a7dd277ac75a230381031d1c8b3674b07"},
+    {"name":"migrate-to-shoehorn","source":"mattpocock-skills","skillMdSha256":"de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72","treeSha256":"15b57d06d8b5f80931e9265263f9bd7380fdd9c6223afb746f4ada186fb41f2a"},
+    {"name":"prototype","source":"mattpocock-skills","skillMdSha256":"2579ecf89a7fb7e73345117405c7ba9b9fb5ab22a78ecb08b0ce68b73f0148c2","treeSha256":"ea71282475e28c2340112b5a96d069e780a94d4e2754cb430d9443224e489cdd"},
+    {"name":"research","source":"mattpocock-skills","skillMdSha256":"af378829f015775a3bcd65ff466826722e99359017ae6bae227ca4c9bd14049c","treeSha256":"62184af7954b21560d19e94637f9a29c48a0946d6f4d090cdcff531cad1e15fc"},
+    {"name":"resolving-merge-conflicts","source":"mattpocock-skills","skillMdSha256":"c7c9ba81362a786aac05d2223123bf1bd2f8a99c3243a72882ede9c68bedfb24","treeSha256":"aa827be0bca7db1935394c3cb5da70f95f521a749f649f834439b277acbfd63e"},
+    {"name":"scaffold-exercises","source":"mattpocock-skills","skillMdSha256":"75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9","treeSha256":"aed58dc168f52157f452830e7d85225378a27a8da6b651b62411bca593f34aaf"},
+    {"name":"setup-matt-pocock-skills","source":"mattpocock-skills","skillMdSha256":"310fb1a73c0467e617e17d7c41d4a2278b5405c4a27f36d7cd22bb4599aee6bb","treeSha256":"5c41e847c29eaaa10c337ff3ade6044e8694f5dcc4fb5578acfeb94dcc5cd92a"},
+    {"name":"setup-pre-commit","source":"mattpocock-skills","skillMdSha256":"872f4037cb7e6e0e340d4175c086550072959925dffc87b160d1a30dc9f63bbd","treeSha256":"d91e81c178f851e5fbe9438e917e2bc3484ca0763afd1fb91b6babedd7bc223c"},
+    {"name":"setup-ts-deep-modules","source":"mattpocock-skills","skillMdSha256":"5c07732bb156cbf89cce4b9ed2b27bb96b9f517597f748fc52bb0ff5b88e2949","treeSha256":"63718d827664d731879cc504aeaed4daf5456957228fe8eb73f4575461bd698e"},
+    {"name":"tdd","source":"mattpocock-skills","skillMdSha256":"6875cbca6b7d17be635dc9b457cc6363125f85cef26f443991b77c7d9eb430d2","treeSha256":"c0eae591c3fccf426a5223a5ea58f5dc1d8ba62f45db9eeabce9dbbdfd11d4e3"},
+    {"name":"teach","source":"mattpocock-skills","skillMdSha256":"6d2dbe5e03084cf26fef66b535127b36cd1bcbe9478e26b0626029cd51dc2259","treeSha256":"abb95f4afbe498b272697c754aa437030a09d9ff15f70909f54506bfd5db4c64"},
+    {"name":"to-questionnaire","source":"mattpocock-skills","skillMdSha256":"8e7f9ed8d7b2e66babf1a54aee9b94319bf38c32619cffe78819df6518ead5fc","treeSha256":"42c06cb07f282d931fd0b8b04286af4fec0b96dd83679ce28517637a0415f4dd"},
+    {"name":"to-spec","source":"mattpocock-skills","skillMdSha256":"69ae8bd0ee33d4d350e50eed68f8c958c4b95ffa502ad90e7757e95e7e21419d","treeSha256":"6fec66ea94b1290a4e1ce8fe6f0bec8730f8e6efa268e1a96db55ca880d5c92e"},
+    {"name":"to-tickets","source":"mattpocock-skills","skillMdSha256":"7d211a9262a741b62c70e06dafb507732f5927cca6839391a4fd9f47ace98984","treeSha256":"788c48ffa14154dd59c6e059ee9d58b91eb8f6b6a49db35462b0712ddd9028f5"},
+    {"name":"triage","source":"mattpocock-skills","skillMdSha256":"e52a18163b7b76431393d89c414426b202cacc812f49f95d540d33f2a058dde1","treeSha256":"8d1830328a92265a7b11452a4d57f1274498a5e593676aaff86929661d42d807"},
+    {"name":"wait-what","source":"mattpocock-skills","skillMdSha256":"8923f7df1a0d1b138281658e134caa4bf1c618d2876a2323b19acdfdffebc024","treeSha256":"98f269708201b25ea8495dff09ec72564a38b0e236020ec92f0c8bd83279be26"},
+    {"name":"wayfinder","source":"mattpocock-skills","skillMdSha256":"73cc3fc0951b02f028e035e381b69a17e14700b04ecb51fdb0aaf3ce1162b959","treeSha256":"ec807317bb17cfe533b9d545210470b689b4dfc53f20ede64dac7e675e64fdc2"},
+    {"name":"wizard","source":"mattpocock-skills","skillMdSha256":"7fb2b4ba23870ec028c85c6d7ef1ca573413ca7026bd4d410fe0e6d8dc9d1e92","treeSha256":"144792283270fc6ef86803ff4668d4ad49d7e967f6a48581beeb53fee4369480"},
+    {"name":"writing-beats","source":"mattpocock-skills","skillMdSha256":"668185cfb6eb6a324b8d864404c398e21f3cddbb637b760e39b7784c8c5e4fee","treeSha256":"34a2f980f3f7baadd62e91eb882a41794f06a51ae5b37ab1a2cca119816cc83e"},
+    {"name":"writing-for-agents","source":"mattpocock-skills","skillMdSha256":"a842323e664e5af104eac5c97ad22fda929ebeb62d81c501161ac1f6f482db58","treeSha256":"553b47c8ef959de441b40bbb896d1e35404b24139310fcf3e64b77cb0d14cd21"},
+    {"name":"writing-fragments","source":"mattpocock-skills","skillMdSha256":"c61b6608f227b0eee1b832273360cf5088ad68c343c15ec9c06673086662e64e","treeSha256":"3fe7b0f3a9bd787a2b2135b48c21c44209158f6d787aca01a0a7aca1248be982"},
+    {"name":"writing-shape","source":"mattpocock-skills","skillMdSha256":"67d34422bbe43cfd523dea9fe7b3ec5260791aed8ea52309b5b85f9d76f32745","treeSha256":"961fb655954949d39b276235b8d96467f88c25afcf502174af4f8b09c77ebb84"}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "efficiency.schema.json",
+  "title": "DecisionHarbor v0.2.0 candidate efficiency evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "qualityScoreIncluded", "sessions", "aggregate", "environmentAndInterventions"],
+  "properties": {
+    "schemaVersion": {"const": 2},
+    "source": {"type": "string", "minLength": 1},
+    "qualityScoreIncluded": {"const": false},
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "ticketPath", "sessionRef", "recordPath", "startedAt", "completedAt", "wallClockDurationSeconds", "tokenUsage", "source"],
+        "properties": {
+          "stage": {"enum": ["planning", "ticket"]},
+          "ticketPath": {"type": ["string", "null"]},
+          "sessionRef": {"type": ["string", "null"]},
+          "recordPath": {"type": ["string", "null"]},
+          "startedAt": {"type": ["string", "null"], "format": "date-time"},
+          "completedAt": {"type": ["string", "null"], "format": "date-time"},
+          "wallClockDurationSeconds": {"type": ["number", "null"], "minimum": 0},
+          "tokenUsage": {
+            "oneOf": [
+              {"type": "null"},
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["totalTokens", "inputTokens", "outputTokens", "cachedInputTokens", "reasoningOutputTokens"],
+                "properties": {
+                  "totalTokens": {"type": ["integer", "null"], "minimum": 0},
+                  "inputTokens": {"type": ["integer", "null"], "minimum": 0},
+                  "outputTokens": {"type": ["integer", "null"], "minimum": 0},
+                  "cachedInputTokens": {"type": ["integer", "null"], "minimum": 0},
+                  "reasoningOutputTokens": {"type": ["integer", "null"], "minimum": 0}
+                }
+              }
+            ]
+          },
+          "source": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wallClockDurationSeconds", "totalTokens", "cost"],
+      "properties": {
+        "wallClockDurationSeconds": {"type": ["number", "null"], "minimum": 0},
+        "totalTokens": {"type": ["integer", "null"], "minimum": 0},
+        "cost": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "environmentAndInterventions": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

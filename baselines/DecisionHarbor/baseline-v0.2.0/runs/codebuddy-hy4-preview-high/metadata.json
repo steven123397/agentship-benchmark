@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "status": "prepared",
+  "candidate": {
+    "id": "codebuddy-hy4-preview-high",
+    "agent": "CodeBuddy",
+    "model": "hy4-preview",
+    "harness": "CodeBuddy",
+    "branch": "v0.2.0/codebuddy-hy4-preview-high",
+    "worktree": "/home/liangjiaqi/projects/DecisionHarbor/.worktrees/codebuddy-hy4-preview-high",
+    "planningCommit": null,
+    "resultCommit": null
+  },
+  "baseline": {
+    "tag": "baseline-v0.2.0",
+    "commit": "9355032ecadd6d3c940d7977fe381f9f8a93b1ab"
+  },
+  "development": {
+    "brief": "../../development-brief.md",
+    "workflowRecord": "workflow.json",
+    "currentStage": "prepared",
+    "ticketCounts": {
+      "total": 0,
+      "resolved": 0,
+      "blocked": 0,
+      "wontfix": 0
+    }
+  },
+  "completion": {
+    "agentReportedComplete": false,
+    "coordinatorFrozen": false,
+    "independentlyVerified": false,
+    "independentVerificationScope": null
+  },
+  "remote": null,
+  "runtime": null,
+  "skillEnvironment": {
+    "sharedExternalSkillsManifest": "../../shared-external-skills.json",
+    "candidateUsageRecord": "skills.json"
+  },
+  "review": null
+}
